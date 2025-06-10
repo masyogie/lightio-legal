@@ -1,0 +1,6 @@
+# Ignore all markdown files
+*.md
+
+# Un-ignore specific files
+!support.md
+!privacy_policy.md
