@@ -101,17 +101,17 @@ section:last-of-type {
 
 .app-store-btn {
     display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s;
+    transition: opacity 0.3s;
 }
 
 .app-store-btn:hover {
-    background-color: #0056b3;
+    opacity: 0.8;
+}
+
+.app-store-btn img {
+    height: 50px;
+    width: auto;
 }
 
 #features h2, #about h2, #support h2 {
