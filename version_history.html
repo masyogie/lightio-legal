@@ -37,8 +37,11 @@
             <article class="version-item">
                 <h3>Version 1.6</h3>
                 <p class="version-date">May 17, 2026</p>
-                <p>This release focuses on stability and reliability. We've added crash reporting so we can detect and resolve issues faster, and strengthened how your history and favorites sync across devices.</p>
+                <p>This release introduces <strong>Prayer Reminders</strong>, an optional, consent-gated feature that calculates accurate prayer times for your location and sends on-device notifications. We've also added crash reporting and strengthened cloud sync reliability.</p>
                 <ul>
+                    <li><strong>Prayer Reminders (New):</strong> Opt in to receive local notifications for the five daily prayers. Uses one-time location detection (city, country, coordinates, time zone) to calculate accurate prayer times via the Adhan algorithm. Notifications are scheduled on-device.</li>
+                    <li><strong>Indonesia-Specific Presets:</strong> Choose between Muhammadiyah (Munas Tarjih ke-31) and Kemenag (Ministry of Religious Affairs) calculation methods for prayer times tailored to local fatwa.</li>
+                    <li><strong>Asr Calculation Choice:</strong> Pick the Asr calculation behavior (Standard or Hanafi) directly, framed by calculation behavior rather than madhab identity.</li>
                     <li><strong>Crash Reporting:</strong> Integrated Firebase Crashlytics for faster diagnosis and resolution of stability issues. Crash data handling is declared in our App Privacy manifest.</li>
                     <li><strong>Reliable Cloud Sync:</strong> Improved coordination for History and Favorites sync — your local data is now preserved if an initial cloud fetch fails due to a flaky connection.</li>
                     <li><strong>Under-the-Hood Refactor:</strong> Reworked how detection thumbnails are stored on disk for better long-term reliability.</li>

@@ -88,6 +88,12 @@
                         <li>If you opt-in for cloud storage, your history and favorites data may be securely backed up to the cloud. This is to enable synchronization across devices or data recovery. Images themselves are not part of this standard cloud backup unless a specific feature explicitly states so and obtains separate confirmation.</li>
                     </ul>
                 </li>
+                <li><strong>Prayer Reminders Data (Only if 'Prayer Reminders' consent is given and you grant iOS notification permission):</strong>
+                    <ul>
+                        <li>One-time location detection (city, country, coordinates, time zone) used to calculate accurate prayer times for your area. Stored in your profile on Firebase Firestore.</li>
+                        <li>Prayer notifications are scheduled and delivered locally on-device; the schedule itself is not transmitted.</li>
+                    </ul>
+                </li>
             </ul>
             <p>By default, images and primary data like history and favorites are stored locally on your device.</p>
 
@@ -119,6 +125,11 @@
                 <li><strong>Enable Cloud Features (Cloud Storage Data - if consent given):</strong>
                     <ul>
                         <li>Securely back up and synchronize your history and favorites data across your devices, or assist in restoring it if you change devices.</li>
+                    </ul>
+                </li>
+                <li><strong>Deliver Prayer Reminders (Prayer Reminders Data - if consent given):</strong>
+                    <ul>
+                        <li>Calculate accurate prayer times based on your detected location using the Adhan calculation method, and schedule local notifications on your device.</li>
                     </ul>
                 </li>
             </ul>
@@ -162,6 +173,7 @@
                 <li>Favorites are stored locally until you remove them.</li>
                 <li>User profile information (if provided for Data Personalization) is retained until you clear your profile or delete all user data.</li>
                 <li>If Cloud Storage consent is given, your backed-up data is retained in the cloud until you disable cloud storage for that data type or delete all your user data.</li>
+                <li>Location data (if Prayer Reminders is enabled) is retained in your profile until you remove it in Prayer Reminders settings or delete your account. Revoking Prayer Reminders consent deletes the stored location.</li>
                 <li>You can delete your local and, where applicable, cloud-stored data at any time through the app's settings.</li>
             </ul>
             <p>When you delete data through the app, it is permanently removed from your device and, if applicable, our cloud systems.</p>
