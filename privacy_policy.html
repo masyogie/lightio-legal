@@ -48,7 +48,7 @@
     <main>
         <div class="legal-container">
             <h1>Privacy Policy for Lightio</h1>
-            <p><strong>Last updated: May 16, 2025</strong></p>
+            <p><strong>Last updated: May 17, 2026</strong></p>
             <p>Lightio collects data based on your interactions and consent settings:</p>
 
             <h2>Data We Collect</h2>
@@ -61,14 +61,20 @@
                         <li>Favorites you save (stored locally on your device).</li>
                     </ul>
                 </li>
-                <li><strong>Analytics Data (Only if 'Analytics' consent is given):</strong>
+                <li><strong>Analytics &amp; Crash Data (Only if 'Analytics' consent is given):</strong>
                     <ul>
-                        <li>Anonymous app usage information, such as feature usage frequency, session duration, and crash reports. This helps us understand how our app is used and to improve its performance and stability.</li>
+                        <li>Anonymous app usage information, such as feature usage frequency and session duration, processed via Firebase Analytics.</li>
+                        <li>Crash reports and diagnostic data, processed via Firebase Crashlytics. This helps us identify and fix stability issues quickly. No personally identifiable information is included in crash data.</li>
                     </ul>
                 </li>
                 <li><strong>UI Personalization Data (Only if 'UI Personalization' consent is given):</strong>
                     <ul>
                         <li>Preferences you set for the app's user interface (e.g., theme choices, layout adjustments) to tailor the app's appearance to your liking.</li>
+                    </ul>
+                </li>
+                <li><strong>Account Verification Data (Only if you choose to verify your phone number):</strong>
+                    <ul>
+                        <li>Your phone number and the one-time SMS verification code, processed via Firebase Phone Auth strictly for verification. The code is not retained after verification completes.</li>
                     </ul>
                 </li>
                 <li><strong>Data Personalization Data (Only if 'Data Personalization' consent is given, 'UI Personalization' is active, and your profile is complete):</strong>
@@ -80,6 +86,12 @@
                 <li><strong>Cloud Storage Data (Only if 'Cloud Storage' consent is given):</strong>
                     <ul>
                         <li>If you opt-in for cloud storage, your history and favorites data may be securely backed up to the cloud. This is to enable synchronization across devices or data recovery. Images themselves are not part of this standard cloud backup unless a specific feature explicitly states so and obtains separate confirmation.</li>
+                    </ul>
+                </li>
+                <li><strong>Prayer Reminders Data (Only if 'Prayer Reminders' consent is given and you grant iOS notification permission):</strong>
+                    <ul>
+                        <li>One-time location detection (city, country, coordinates, time zone) used to calculate accurate prayer times for your area. Stored in your profile on Firebase Firestore.</li>
+                        <li>Prayer notifications are scheduled and delivered locally on-device; the schedule itself is not transmitted.</li>
                     </ul>
                 </li>
             </ul>
@@ -115,15 +127,22 @@
                         <li>Securely back up and synchronize your history and favorites data across your devices, or assist in restoring it if you change devices.</li>
                     </ul>
                 </li>
+                <li><strong>Deliver Prayer Reminders (Prayer Reminders Data - if consent given):</strong>
+                    <ul>
+                        <li>Calculate accurate prayer times based on your detected location using the Adhan calculation method, and schedule local notifications on your device.</li>
+                    </ul>
+                </li>
             </ul>
-            <p>Your images are processed locally on your device using our ML model. Only object labels are sent to our hadith search service (DigitalOcean GenAI) to find relevant results.</p>
+            <p>Your images are processed locally on your device using our on-device ML model. Only the resulting object labels are sent to our hadith search service (OpenAI) to find relevant results.</p>
 
             <h2>Third-Party Services</h2>
             <p>Lightio uses the following third-party services:</p>
             <ul>
-                <li>DigitalOcean GenAI service for hadith search</li>
+                <li><strong>OpenAI</strong> &mdash; AI-powered hadith search. Only object labels are transmitted; your images are never sent.</li>
+                <li><strong>Firebase (Google)</strong> &mdash; for push notifications (Firebase Cloud Messaging), phone number verification (Firebase Phone Auth), crash reporting (Firebase Crashlytics), anonymous analytics (Firebase Analytics), and optional cloud sync of your favorites and history (Cloud Firestore).</li>
+                <li><strong>Apple Push Notification service (APNs)</strong> &mdash; underlying delivery channel for push notifications on iOS.</li>
             </ul>
-            <p>When you search for hadiths, the object label (not the image) is sent to our secure API hosted on DigitalOcean.</p>
+            <p>When you search for hadiths, only the object label (never the image) is sent to OpenAI's API to retrieve relevant results.</p>
 
             <h2>Your GDPR Rights</h2>
             <p>Under the GDPR, you have the following rights:</p>
@@ -154,6 +173,7 @@
                 <li>Favorites are stored locally until you remove them.</li>
                 <li>User profile information (if provided for Data Personalization) is retained until you clear your profile or delete all user data.</li>
                 <li>If Cloud Storage consent is given, your backed-up data is retained in the cloud until you disable cloud storage for that data type or delete all your user data.</li>
+                <li>Location data (if Prayer Reminders is enabled) is retained in your profile until you remove it in Prayer Reminders settings or delete your account. Revoking Prayer Reminders consent deletes the stored location.</li>
                 <li>You can delete your local and, where applicable, cloud-stored data at any time through the app's settings.</li>
             </ul>
             <p>When you delete data through the app, it is permanently removed from your device and, if applicable, our cloud systems.</p>
