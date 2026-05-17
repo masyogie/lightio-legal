@@ -1,17 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const nav = document.querySelector('nav');
+    const navUl = nav ? nav.querySelector('ul') : null;
+    const navToggle = nav ? nav.querySelector('.nav-toggle') : null;
 
+    if (navToggle && navUl) {
+        navToggle.addEventListener('click', function() {
+            const isOpen = navUl.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            let targetId = this.getAttribute('href');
-            let targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            if (navUl && navUl.classList.contains('is-open')) {
+                navUl.classList.remove('is-open');
+                if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
