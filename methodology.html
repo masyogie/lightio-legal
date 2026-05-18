@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — Lightio</title>
+<meta name="description" content="How Lightio sources Hadiths, processes detections, generates summaries, and where its limits are. Transparency over hype.">
+<meta property="og:title" content="Methodology — Lightio">
+<meta property="og:description" content="How Lightio sources Hadiths, processes detections, generates summaries, and where its limits are.">
+<meta property="og:image" content="https://lightio.yogie.id/assets/images/Lightio_Icon_iOS.png">
+<meta property="og:url" content="https://lightio.yogie.id/methodology.html">
+<meta property="og:type" content="article">
+<link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .method-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0 28px;
+  }
+  .method-flow .node {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 18px 16px;
+    text-align: center;
+    position: relative;
+  }
+  .method-flow .node .step {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .method-flow .node h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .method-flow .node p { font-size: 12.5px; color: var(--text-3); margin: 0; line-height: 1.45; }
+  .method-flow .node:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: var(--text-3);
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    z-index: 1;
+  }
+  @media (max-width: 760px) {
+    .method-flow { grid-template-columns: 1fr; }
+    .method-flow .node:not(:last-child)::after { right: 50%; top: auto; bottom: -10px; transform: translateX(50%) rotate(90deg); }
+  }
+
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0 24px;
+  }
+  .source-card {
+    background: var(--bg-tint);
+    border-radius: var(--r-md);
+    padding: 18px;
+  }
+  .source-card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .source-card h4 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .source-card .grade {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #E8F5E9;
+    color: #1B7E3D;
+  }
+  .source-card .grade.medium { background: #FFF4E6; color: #B86B00; }
+  .source-card p { font-size: 13px; color: var(--text-2); line-height: 1.5; margin: 0; }
+  .source-card .stats { font-size: 11.5px; color: var(--text-3); margin-top: 8px; font-family: 'JetBrains Mono', monospace; }
+  @media (max-width: 760px) { .source-grid { grid-template-columns: 1fr; } }
+
+  .limit-card {
+    background: #FFF7ED;
+    border: 1px solid #FCD9A8;
+    border-radius: var(--r-md);
+    padding: 18px 20px;
+    margin: 16px 0 12px;
+    display: flex;
+    gap: 14px;
+  }
+  .limit-card .ico {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #FF9F0A;
+    color: #fff;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .limit-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .limit-card p { font-size: 13.5px; color: var(--text-2); margin: 0; line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">
+      <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+      <span>Lightio</span>
+    </a>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="version_history.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+    <a href="https://apps.apple.com/us/app/lightio/id6746337503" class="nav-cta" target="_blank" rel="noopener">
+      Download
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Methodology</span>
+    </div>
+    <h1>How Lightio actually works.</h1>
+    <p class="lede">Transparency over hype. Here's exactly how we source Hadiths, run object detection, generate summaries, and where the limits are.</p>
+    <div class="page-meta">
+      <span class="page-meta-pill">📚 Authentic sources only</span>
+      <span class="page-meta-pill">🔬 Reviewed quarterly</span>
+      <span class="page-meta-pill">⚠️ Limits documented</span>
+    </div>
+  </div>
+</section>
+
+<div class="doc-layout">
+  <aside class="doc-toc">
+    <div class="doc-toc-title">Sections</div>
+    <ul id="tocList">
+      <li><a href="#pipeline">The pipeline</a></li>
+      <li><a href="#detection">Object detection</a></li>
+      <li><a href="#sources">Hadith sources</a></li>
+      <li><a href="#mapping">Object → Hadith mapping</a></li>
+      <li><a href="#summary">AI summaries</a></li>
+      <li><a href="#prayer">Prayer time calculation</a></li>
+      <li><a href="#limits">Known limitations</a></li>
+      <li><a href="#review">How we review</a></li>
+    </ul>
+  </aside>
+
+  <main class="doc-content">
+    <h2 id="pipeline">The pipeline, end to end</h2>
+    <p>Every Hadith you see in Lightio passes through four steps. Three of them happen on your iPhone — only one touches our server.</p>
+
+    <div class="method-flow">
+      <div class="node">
+        <div class="step">01 · LOCAL</div>
+        <h4>Capture</h4>
+        <p>You frame an object &amp; tap shutter</p>
+      </div>
+      <div class="node">
+        <div class="step">02 · LOCAL</div>
+        <h4>Detect</h4>
+        <p>YOLOX-M finds objects on-device</p>
+      </div>
+      <div class="node">
+        <div class="step">03 · CLOUD</div>
+        <h4>Search</h4>
+        <p>Label sent to find Hadith</p>
+      </div>
+      <div class="node">
+        <div class="step">04 · LOCAL</div>
+        <h4>Display</h4>
+        <p>Result rendered &amp; saved</p>
+      </div>
+    </div>
+    <p>The image itself never leaves your device. Only the resulting object label — a short string like <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"date"</code> or <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"sheep"</code> — is sent to our search backend.</p>
+
+    <h2 id="detection">Object detection</h2>
+    <p>Lightio uses <strong>YOLOX-M</strong>, an Apache 2.0-licensed object detector compiled to Core ML for Apple's Neural Engine. It recognizes the 80 categories in the COCO vocabulary — a carefully chosen subset that covers most everyday objects relevant to Hadith literature.</p>
+    <p>We chose YOLOX-M over alternatives for three reasons:</p>
+    <ul>
+      <li><strong>License clarity.</strong> Apache 2.0 is unambiguously permissive for App Store distribution.</li>
+      <li><strong>Size.</strong> ~31% smaller than the previous YOLOv7 model we used, with comparable accuracy.</li>
+      <li><strong>Speed.</strong> Real-time inference on iPhone — no waiting after capture.</li>
+    </ul>
+    <p>The model returns bounding boxes with confidence scores. We display all detections above the user-configurable confidence threshold (default 50%).</p>
+
+    <h2 id="sources">Hadith sources</h2>
+    <p>Lightio's Hadith corpus is built exclusively from <strong>Kutub al-Sittah</strong> (the Six Canonical Collections) plus two well-regarded supplementary works. Every Hadith you see includes its source collection, narrator chain (<em>isnad</em>), and authenticity grading.</p>
+
+    <div class="source-grid">
+      <div class="source-card">
+        <div class="meta">
+          <h4>Sahih al-Bukhari</h4>
+          <span class="grade">Sahih</span>
+        </div>
+        <p>The most rigorously authenticated Hadith collection. Compiled by Imam al-Bukhari (d. 870 CE).</p>
+        <div class="stats">~7,275 Hadiths</div>
+      </div>
+      <div class="source-card">
+        <div class="meta">
+          <h4>Sahih Muslim</h4>
+          <span class="grade">Sahih</span>
+        </div>
+        <p>The second of the two "Sahihayn." Compiled by Imam Muslim ibn al-Hajjaj (d. 875 CE).</p>
+        <div class="stats">~7,500 Hadiths</div>
+      </div>
+      <div class="source-card">
+        <div class="meta">
+          <h4>Sunan Abu Dawud</h4>
+          <span class="grade">Mixed</span>
+        </div>
+        <p>Focused on Hadith of legal significance. Compiled by Abu Dawud al-Sijistani (d. 889 CE).</p>
+        <div class="stats">~5,274 Hadiths</div>
+      </div>
+      <div class="source-card">
+        <div class="meta">
+          <h4>Jami at-Tirmidhi</h4>
+          <span class="grade">Mixed</span>
+        </div>
+        <p>Includes notes on grading. Compiled by Imam al-Tirmidhi (d. 892 CE).</p>
+        <div class="stats">~3,956 Hadiths</div>
+      </div>
+      <div class="source-card">
+        <div class="meta">
+          <h4>Sunan al-Nasa'i</h4>
+          <span class="grade">Mixed</span>
+        </div>
+        <p>The most stringent of the four Sunan works. Compiled by Imam al-Nasa'i (d. 915 CE).</p>
+        <div class="stats">~5,761 Hadiths</div>
+      </div>
+      <div class="source-card">
+        <div class="meta">
+          <h4>Sunan Ibn Majah</h4>
+          <span class="grade medium">Mixed</span>
+        </div>
+        <p>Completes the Kutub al-Sittah. Compiled by Imam Ibn Majah (d. 887 CE).</p>
+        <div class="stats">~4,341 Hadiths</div>
+      </div>
+    </div>
+
+    <p>We do <strong>not</strong> include weak (<em>da'if</em>) or fabricated (<em>mawdu'</em>) Hadiths in the corpus. Where a Hadith's grading is contested among scholars, we surface the majority view.</p>
+
+    <h2 id="mapping">Object → Hadith mapping</h2>
+    <p>This is the part most people are curious about. How does the app know that "date" should bring back a Hadith about Ajwa dates?</p>
+    <ol>
+      <li><strong>Curated keyword sets.</strong> Each of the 80 COCO labels is mapped to a hand-curated list of Arabic and English terms relevant to that object (e.g. "date" → <em>tamr</em>, <em>'ajwa</em>, <em>rutab</em>).</li>
+      <li><strong>Full-text search.</strong> We search the Hadith corpus for matches in the Arabic text and English translations, weighted by how prominent the term is in each Hadith.</li>
+      <li><strong>AI ranking.</strong> A reasoning step ranks candidate Hadiths by topical relevance to the detected object — not just keyword frequency.</li>
+      <li><strong>Diversity sampling.</strong> If you detect the same object twice, you'll get different Hadiths from the candidate set when possible.</li>
+    </ol>
+
+    <h2 id="summary">AI-generated summaries</h2>
+    <p>The original Arabic text and its scholarly translation are <strong>always shown unchanged</strong>. We add an AI-generated summary — labeled as such — in your device's language, to help with comprehension when the Hadith is long or context-heavy.</p>
+    <p>Summaries are generated by OpenAI's models with prompts engineered to:</p>
+    <ul>
+      <li>Preserve the Hadith's meaning without paraphrasing scholarly interpretation.</li>
+      <li>Avoid theological commentary or jurisprudential rulings.</li>
+      <li>Mark any uncertainty explicitly rather than fabricate confidence.</li>
+      <li>Fall back to "summary unavailable" if the model can't generate something faithful.</li>
+    </ul>
+    <p>Summaries are <strong>aids, not replacements</strong>. We always recommend reading the source text alongside.</p>
+
+    <h2 id="prayer">Prayer time calculation</h2>
+    <p>Prayer times use the open-source <strong>Adhan algorithm</strong>, a widely-trusted implementation by Batoul Apps. Calculations run entirely on-device once you've granted location permission once.</p>
+    <p>We expose 8 calculation methods:</p>
+    <ul>
+      <li><strong>MWL</strong> — Muslim World League (Fajr 18°, Isha 17°). Safe global default.</li>
+      <li><strong>ISNA</strong> — Islamic Society of North America (Fajr 15°, Isha 15°).</li>
+      <li><strong>Egypt</strong> — General Authority of Survey (Fajr 19.5°, Isha 17.5°).</li>
+      <li><strong>Umm al-Qura</strong> — Makkah, Saudi Arabia (Isha = 90 min after Maghrib).</li>
+      <li><strong>Karachi</strong> — University of Islamic Sciences (Fajr 18°, Isha 18°).</li>
+      <li><strong>Tehran</strong> — Institute of Geophysics, University of Tehran.</li>
+      <li><strong>Muhammadiyah</strong> — Munas Tarjih ke-31, Indonesia.</li>
+      <li><strong>Kemenag</strong> — Ministry of Religious Affairs, Indonesia.</li>
+    </ul>
+    <p>You can also override the Asr calculation between Standard (Shafi'i) and Hanafi behavior independently of your chosen method.</p>
+
+    <h2 id="limits">Known limitations</h2>
+    <p>We'd rather you know the limits up front than discover them disappointed.</p>
+
+    <div class="limit-card">
+      <div class="ico">!</div>
+      <div>
+        <h4>The 80-object ceiling</h4>
+        <p>Lightio can only detect objects in the COCO vocabulary. That means specialized religious items (prayer beads, kufi, qur'an stand) and cultural objects aren't detected. Expanding vocabulary is on our roadmap.</p>
+      </div>
+    </div>
+
+    <div class="limit-card">
+      <div class="ico">!</div>
+      <div>
+        <h4>Object ≠ Theme</h4>
+        <p>Detecting "cup" surfaces Hadiths about drinking, vessels, and hospitality — but not necessarily the most spiritually significant Hadith for your situation. Lightio is a discovery tool, not a fatwa engine.</p>
+      </div>
+    </div>
+
+    <div class="limit-card">
+      <div class="ico">!</div>
+      <div>
+        <h4>Translation nuance</h4>
+        <p>English translations of Hadith vary across scholars. We use widely-accepted translations and always show the original Arabic, but for legal/theological matters we recommend consulting qualified scholars and primary sources.</p>
+      </div>
+    </div>
+
+    <div class="limit-card">
+      <div class="ico">!</div>
+      <div>
+        <h4>AI summaries can drift</h4>
+        <p>Despite careful prompting, AI summaries occasionally introduce subtle inaccuracies. We mark summaries explicitly and treat them as supplementary — always defer to the source text.</p>
+      </div>
+    </div>
+
+    <h2 id="review">How we review</h2>
+    <p>Lightio's Hadith corpus and object mappings are reviewed quarterly. We track every reported correction in a public-feel internal log and fix issues before the next release.</p>
+    <p>If you spot a mistranslation, misattribution, or questionable mapping, please email us with a screenshot and the correct interpretation. We take corrections seriously.</p>
+
+    <div class="contact-card">
+      <h3>Found something we should fix?</h3>
+      <p>We treat methodology corrections as the highest-priority bug class. Help us improve Lightio for everyone.</p>
+      <a href="mailto:hello@yogie.id?subject=Methodology%20correction">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Report a methodology issue
+      </a>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+        <span>Lightio</span>
+      </a>
+      <p>Your intelligent visual Hadith guide. Made in Yogyakarta — for the global Ummah.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#prayer">Prayer Reminders</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="version_history.html">Version history</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="support.html">Help &amp; Support</a></li>
+        <li><a href="press-kit.html">Press kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hello@yogie.id">hello@yogie.id</a></li>
+        <li><a href="https://apps.apple.com/us/app/lightio/id6746337503" target="_blank" rel="noopener">App Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025–2026 Mohammad Sani Suprayogi. All rights reserved.</span>
+    <span>Made with care · Available worldwide</span>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('primary-nav');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+const tocLinks = document.querySelectorAll('#tocList a');
+const sections = [...tocLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function updateToc() {
+  const y = window.scrollY + 120;
+  let activeIdx = 0;
+  sections.forEach((s, i) => { if (s.offsetTop <= y) activeIdx = i; });
+  tocLinks.forEach((a, i) => a.classList.toggle('active', i === activeIdx));
+}
+window.addEventListener('scroll', updateToc, { passive: true });
+updateToc();
+</script>
+</body>
+</html>
