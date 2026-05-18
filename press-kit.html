@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit — Lightio</title>
+<meta name="description" content="Brand assets, screenshots, fact sheet, and founder info for journalists, reviewers, and creators covering Lightio.">
+<meta property="og:title" content="Press Kit — Lightio">
+<meta property="og:description" content="Brand assets, screenshots, fact sheet, and founder info for journalists.">
+<meta property="og:image" content="https://lightio.yogie.id/assets/images/Lightio_Icon_iOS.png">
+<meta property="og:url" content="https://lightio.yogie.id/press-kit.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pk-section { padding: 56px 0; border-top: 1px solid var(--border); }
+  .pk-section:first-of-type { border-top: none; }
+  .pk-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .pk-section .lead {
+    color: var(--text-2);
+    font-size: 15px;
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+
+  /* Fact sheet */
+  .factsheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: #fff;
+  }
+  .factsheet dt {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    text-transform: uppercase;
+    padding: 18px 22px 6px;
+    border-top: 1px solid var(--border);
+  }
+  .factsheet dd {
+    font-size: 15px;
+    color: var(--text);
+    margin: 0;
+    padding: 0 22px 18px;
+    border-bottom: none;
+  }
+  .factsheet > div {
+    border-right: 1px solid var(--border);
+  }
+  .factsheet > div:nth-child(even) { border-right: none; }
+  .factsheet > div:nth-child(-n+2) dt { border-top: none; }
+
+  /* Brand */
+  .brand-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 16px; }
+  .brand-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .brand-card .preview {
+    flex: 1;
+    background: var(--bg-tint);
+    border-radius: var(--r-md);
+    display: grid;
+    place-items: center;
+    min-height: 140px;
+    padding: 24px;
+  }
+  .brand-card .preview.dark { background: var(--text); }
+  .brand-card .preview img { width: 64px; height: 64px; }
+  .brand-card .preview .wordmark { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.03em; color: var(--text); }
+  .brand-card .preview.dark .wordmark { color: #fff; }
+  .brand-card .meta { display: flex; justify-content: space-between; align-items: center; }
+  .brand-card .name { font-size: 14px; font-weight: 600; }
+  .brand-card .fmt { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); }
+  .brand-card a {
+    text-decoration: none;
+    background: var(--text);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.15s;
+  }
+  .brand-card a:hover { background: var(--primary); }
+
+  /* Colors */
+  .color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .swatch {
+    border-radius: var(--r-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+  .swatch .chip { aspect-ratio: 16 / 10; }
+  .swatch .body { padding: 14px 16px; }
+  .swatch h4 { font-size: 13.5px; font-weight: 600; margin: 0 0 4px; }
+  .swatch .hex { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-3); }
+
+  /* Screenshots */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .screenshot-slot {
+    background: var(--bg-tint);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 12px;
+    aspect-ratio: 9 / 19.5;
+    display: flex;
+    flex-direction: column;
+  }
+  .screenshot-slot image-slot {
+    flex: 1;
+    width: 100%;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px dashed var(--border-strong);
+    display: block;
+  }
+  .screenshot-slot .caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-3);
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 900px) {
+    .factsheet, .brand-grid { grid-template-columns: 1fr; }
+    .factsheet > div { border-right: none; }
+    .color-grid { grid-template-columns: repeat(2, 1fr); }
+    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Boilerplate */
+  .boilerplate {
+    background: var(--bg-tint);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    position: relative;
+  }
+  .boilerplate h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+  .boilerplate .copy { font-size: 15px; color: var(--text-2); line-height: 1.65; max-width: 640px; }
+  .boilerplate .copy-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: #fff;
+    border: 1px solid var(--border-strong);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .boilerplate .copy-btn:hover { border-color: var(--text); }
+  .boilerplate .copy-btn.copied { background: var(--success); color: #fff; border-color: var(--success); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">
+      <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+      <span>Lightio</span>
+    </a>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="version_history.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+    <a href="https://apps.apple.com/us/app/lightio/id6746337503" class="nav-cta" target="_blank" rel="noopener">Download</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Press kit</span>
+    </div>
+    <h1>Press kit</h1>
+    <p class="lede">Everything you need to write or talk about Lightio — logos, screenshots, fact sheet, boilerplate copy, and a direct line to the founders.</p>
+    <div class="page-meta">
+      <span class="page-meta-pill"><span class="dot"></span> Press contact: hello@yogie.id</span>
+      <span class="page-meta-pill">📦 Updated May 17, 2026</span>
+      <span class="page-meta-pill">🌐 Available worldwide</span>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="max-width: 1080px; padding: 0 24px;">
+
+  <!-- Fact sheet -->
+  <section class="pk-section">
+    <h2>Fact sheet</h2>
+    <p class="lead">Quick facts about Lightio for accurate citation.</p>
+    <dl class="factsheet">
+      <div><dt>Product</dt><dd>Lightio</dd></div>
+      <div><dt>Category</dt><dd>iOS Education / Reference</dd></div>
+      <div><dt>Platform</dt><dd>iOS 18.6+</dd></div>
+      <div><dt>Launched</dt><dd>June 2025</dd></div>
+      <div><dt>Latest version</dt><dd>1.6 (May 17, 2026)</dd></div>
+      <div><dt>Price</dt><dd>Free · no ads · no tracking</dd></div>
+      <div><dt>Made by</dt><dd>Mohammad Sani Suprayogi &amp; Ami</dd></div>
+      <div><dt>Based in</dt><dd>Yogyakarta, Indonesia</dd></div>
+      <div><dt>Team size</dt><dd>2 people</dd></div>
+      <div><dt>Languages</dt><dd>UI in English; AI summaries in 30+ device languages</dd></div>
+      <div><dt>App Store</dt><dd><a href="https://apps.apple.com/us/app/lightio/id6746337503" target="_blank" rel="noopener" style="color:var(--primary);text-decoration:underline">apps.apple.com/.../lightio</a></dd></div>
+      <div><dt>Website</dt><dd><a href="https://lightio.yogie.id/" style="color:var(--primary);text-decoration:underline">lightio.yogie.id</a></dd></div>
+    </dl>
+  </section>
+
+  <!-- Boilerplate -->
+  <section class="pk-section">
+    <h2>Boilerplate</h2>
+    <p class="lead">A one-paragraph description you can drop into articles, reviews, or app showcases.</p>
+    <div class="boilerplate">
+      <button class="copy-btn" id="copyBoilerplate">Copy</button>
+      <h3 style="color:var(--text-3);letter-spacing:0.08em;text-transform:uppercase">Approved copy · 80 words</h3>
+      <p class="copy" id="boilerplateText">Lightio is a free iOS app that combines on-device object detection with AI-powered Hadith search. Built by a two-person team in Yogyakarta, Indonesia, Lightio lets users discover authentic Hadiths simply by pointing their iPhone camera at everyday objects — a date, a cup, a tree — while keeping all image processing on-device. The app supports prayer reminders with 8 global calculation methods and gives users granular control over data and privacy.</p>
+    </div>
+  </section>
+
+  <!-- Brand -->
+  <section class="pk-section">
+    <h2>Logo &amp; wordmark</h2>
+    <p class="lead">Lightio's logo and wordmark, in the variants you'll need. Always preserve clear space equal to the height of the icon.</p>
+    <div class="brand-grid">
+      <div class="brand-card">
+        <div class="preview">
+          <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio app icon">
+        </div>
+        <div class="meta">
+          <div>
+            <div class="name">App icon</div>
+            <div class="fmt">PNG · 1024×1024</div>
+          </div>
+          <a href="assets/images/Lightio_Icon_iOS.png" download>Download</a>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="preview">
+          <span class="wordmark">Lightio</span>
+        </div>
+        <div class="meta">
+          <div>
+            <div class="name">Wordmark · light</div>
+            <div class="fmt">Poppins Bold</div>
+          </div>
+          <a href="#" onclick="navigator.clipboard.writeText('Lightio');this.textContent='Copied';return false;">Copy</a>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="preview dark">
+          <span class="wordmark">Lightio</span>
+        </div>
+        <div class="meta">
+          <div>
+            <div class="name">Wordmark · dark</div>
+            <div class="fmt">Poppins Bold</div>
+          </div>
+          <a href="#" onclick="navigator.clipboard.writeText('Lightio');this.textContent='Copied';return false;">Copy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section class="pk-section">
+    <h2>Color palette</h2>
+    <p class="lead">Lightio's full palette — use these exact values for accurate brand representation.</p>
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="chip" style="background:#007AFF"></div>
+        <div class="body">
+          <h4>Lightio Blue</h4>
+          <div class="hex">#007AFF · primary</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#0051D0"></div>
+        <div class="body">
+          <h4>Deep Blue</h4>
+          <div class="hex">#0051D0 · hover state</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#5856D6"></div>
+        <div class="body">
+          <h4>Iris</h4>
+          <div class="hex">#5856D6 · gradient pair</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#0A0A0F"></div>
+        <div class="body">
+          <h4>Ink</h4>
+          <div class="hex">#0A0A0F · text &amp; dark</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#34C759"></div>
+        <div class="body">
+          <h4>Success</h4>
+          <div class="hex">#34C759 · confirmations</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#FF9F0A"></div>
+        <div class="body">
+          <h4>Warn</h4>
+          <div class="hex">#FF9F0A · caution</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#FBFAF6;border-bottom:1px solid var(--border)"></div>
+        <div class="body">
+          <h4>Cream</h4>
+          <div class="hex">#FBFAF6 · soft surface</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#F7F8FA;border-bottom:1px solid var(--border)"></div>
+        <div class="body">
+          <h4>Tint</h4>
+          <div class="hex">#F7F8FA · cards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots (image slots) -->
+  <section class="pk-section">
+    <h2>Screenshots</h2>
+    <p class="lead">Drag and drop your own App Store screenshots here. They persist locally so you can preview a finished press kit before sharing. (As the site owner, you'd replace these with real exported images.)</p>
+    <div class="screenshots-grid">
+      <div class="screenshot-slot">
+        <image-slot id="ss-1" shape="rounded" radius="18" placeholder="Hero — camera view"></image-slot>
+        <div class="caption">01 · CAMERA</div>
+      </div>
+      <div class="screenshot-slot">
+        <image-slot id="ss-2" shape="rounded" radius="18" placeholder="Detection results"></image-slot>
+        <div class="caption">02 · DETECT</div>
+      </div>
+      <div class="screenshot-slot">
+        <image-slot id="ss-3" shape="rounded" radius="18" placeholder="Hadith card view"></image-slot>
+        <div class="caption">03 · HADITH</div>
+      </div>
+      <div class="screenshot-slot">
+        <image-slot id="ss-4" shape="rounded" radius="18" placeholder="Prayer reminders"></image-slot>
+        <div class="caption">04 · PRAYER</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder bio -->
+  <section class="pk-section">
+    <h2>Founders</h2>
+    <p class="lead">Available for interviews, podcast appearances, and product reviews. We respond personally.</p>
+    <div class="team-card" style="padding: 32px;">
+      <div class="team-photo"></div>
+      <div>
+        <h3>Mohammad Sani Suprayogi &amp; Ami</h3>
+        <div class="role">CO-CREATORS · LIGHTIO</div>
+        <p>Yogie initiated Lightio to bridge software engineering and Islamic education. Ami contributed to the project's design and content direction. Together, they ship every release from Yogyakarta, Indonesia — building tools for the global Muslim community.</p>
+        <p style="margin-bottom:20px"><strong>Interview topics they're happy to discuss:</strong> on-device AI in religious applications, building global products from Indonesia, privacy-first design, small-team product development, choosing open-source ML licenses.</p>
+        <a href="mailto:hello@yogie.id?subject=Interview%20request%20%E2%80%94%20Lightio" class="contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Request an interview
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press contact -->
+  <section class="pk-section" style="padding-bottom: 88px;">
+    <div class="contact-card">
+      <h3>Press &amp; media inquiries</h3>
+      <p>Any questions, fact-checks, or additional assets you need — write directly to the founders. We don't have a PR team, so you'll always get a personal response.</p>
+      <a href="mailto:hello@yogie.id?subject=Press%20inquiry">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        hello@yogie.id
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+        <span>Lightio</span>
+      </a>
+      <p>Your intelligent visual Hadith guide. Made in Yogyakarta — for the global Ummah.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#prayer">Prayer Reminders</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="version_history.html">Version history</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="support.html">Help &amp; Support</a></li>
+        <li><a href="press-kit.html">Press kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hello@yogie.id">hello@yogie.id</a></li>
+        <li><a href="https://apps.apple.com/us/app/lightio/id6746337503" target="_blank" rel="noopener">App Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025–2026 Mohammad Sani Suprayogi. All rights reserved.</span>
+    <span>Made with care · Available worldwide</span>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('primary-nav');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Copy boilerplate
+const copyBtn = document.getElementById('copyBoilerplate');
+copyBtn?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(document.getElementById('boilerplateText').textContent.trim());
+    copyBtn.textContent = '✓ Copied';
+    copyBtn.classList.add('copied');
+    setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1800);
+  } catch (e) {
+    copyBtn.textContent = 'Press ⌘C';
+    setTimeout(() => copyBtn.textContent = 'Copy', 1800);
+  }
+});
+</script>
+</body>
+</html>

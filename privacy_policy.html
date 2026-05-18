@@ -1,204 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lightio - Privacy Policy</title>
-    <meta name="description" content="Read the privacy policy for the Lightio app to understand how we collect, use, and protect your data.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
-    <link rel="canonical" href="https://lightio.yogie.id/privacy_policy.html">
-    <style>
-        .legal-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            line-height: 1.8;
-        }
-        .legal-container h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .legal-container h2 {
-            margin-top: 2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Lightio</title>
+<meta name="description" content="How Lightio handles your data. Privacy-first by design, with full GDPR rights.">
+<meta property="og:title" content="Privacy Policy — Lightio">
+<meta property="og:description" content="How Lightio handles your data — clearly, fairly, and on your terms. Privacy-first design with full GDPR rights.">
+<meta property="og:image" content="https://lightio.yogie.id/assets/images/Lightio_Icon_iOS.png">
+<meta property="og:url" content="https://lightio.yogie.id/privacy_policy.html">
+<meta property="og:type" content="article">
+<link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio App Icon">
-                    <h1>Lightio</h1>
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
-            <ul id="primary-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy_policy.html">Privacy</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="legal-container">
-            <h1>Privacy Policy for Lightio</h1>
-            <p><strong>Last updated: May 17, 2026</strong></p>
-            <p>Lightio collects data based on your interactions and consent settings:</p>
+<!-- Header -->
+<header>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">
+      <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+      <span>Lightio</span>
+    </a>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#prayer">Prayer</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="version_history.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+    <a href="https://apps.apple.com/us/app/lightio/id6746337503" class="nav-cta" target="_blank" rel="noopener">
+      Download
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
 
-            <h2>Data We Collect</h2>
-            <ul>
-                <li><strong>Essential Data (Collected by default for core functionality):</strong>
-                    <ul>
-                        <li>Images you capture or upload for object detection (these are processed locally on your device and are not transmitted unless you explicitly use a feature that requires it, which would be separately disclosed).</li>
-                        <li>Detection results (object labels derived from your images) used to find relevant hadiths.</li>
-                        <li>Your history of detected objects and viewed hadiths (stored locally on your device).</li>
-                        <li>Favorites you save (stored locally on your device).</li>
-                    </ul>
-                </li>
-                <li><strong>Analytics &amp; Crash Data (Only if 'Analytics' consent is given):</strong>
-                    <ul>
-                        <li>Anonymous app usage information, such as feature usage frequency and session duration, processed via Firebase Analytics.</li>
-                        <li>Crash reports and diagnostic data, processed via Firebase Crashlytics. This helps us identify and fix stability issues quickly. No personally identifiable information is included in crash data.</li>
-                    </ul>
-                </li>
-                <li><strong>UI Personalization Data (Only if 'UI Personalization' consent is given):</strong>
-                    <ul>
-                        <li>Preferences you set for the app's user interface (e.g., theme choices, layout adjustments) to tailor the app's appearance to your liking.</li>
-                    </ul>
-                </li>
-                <li><strong>Account Verification Data (Only if you choose to verify your phone number):</strong>
-                    <ul>
-                        <li>Your phone number and the one-time SMS verification code, processed via Firebase Phone Auth strictly for verification. The code is not retained after verification completes.</li>
-                    </ul>
-                </li>
-                <li><strong>Data Personalization Data (Only if 'Data Personalization' consent is given, 'UI Personalization' is active, and your profile is complete):</strong>
-                    <ul>
-                        <li>User profile information you voluntarily provide, such as gender, date of birth, email address, or phone number.</li>
-                        <li>Your interaction patterns with hadiths and detected objects.</li>
-                    </ul>
-                </li>
-                <li><strong>Cloud Storage Data (Only if 'Cloud Storage' consent is given):</strong>
-                    <ul>
-                        <li>If you opt-in for cloud storage, your history and favorites data may be securely backed up to the cloud. This is to enable synchronization across devices or data recovery. Images themselves are not part of this standard cloud backup unless a specific feature explicitly states so and obtains separate confirmation.</li>
-                    </ul>
-                </li>
-                <li><strong>Prayer Reminders Data (Only if 'Prayer Reminders' consent is given and you grant iOS notification permission):</strong>
-                    <ul>
-                        <li>One-time location detection (city, country, coordinates, time zone) used to calculate accurate prayer times for your area. Stored in your profile on Firebase Firestore.</li>
-                        <li>Prayer notifications are scheduled and delivered locally on-device; the schedule itself is not transmitted.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>By default, images and primary data like history and favorites are stored locally on your device.</p>
+<!-- Page header -->
+<section class="page-header">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Legal</span>
+      <span>/</span>
+      <span>Privacy Policy</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="lede">How Lightio handles your data — clearly, fairly, and on your terms. We default to the minimum and ask before doing anything more.</p>
+    <div class="page-meta">
+      <span class="page-meta-pill"><span class="dot"></span> Last updated · May 17, 2026</span>
+      <span class="page-meta-pill">⏱ 6 min read</span>
+      <span class="page-meta-pill">🌍 Applies globally</span>
+      <span class="page-meta-pill">🇪🇺 GDPR compliant</span>
+    </div>
+  </div>
+</section>
 
-            <h2>How We Use Your Data</h2>
-            <p>We use your data to:</p>
-            <ul>
-                <li><strong>Provide Core Functionality (Essential Data):</strong>
-                    <ul>
-                        <li>Detect objects in your images (local processing on your device).</li>
-                        <li>Find relevant hadiths based on detected object labels by sending these labels (not the images themselves) to our hadith search service.</li>
-                        <li>Maintain your local history and favorites.</li>
-                    </ul>
-                </li>
-                <li><strong>Improve Our App (Analytics Data - if consent given):</strong>
-                    <ul>
-                        <li>Analyze usage patterns to identify popular features, troubleshoot issues, and enhance overall app functionality and user experience.</li>
-                    </ul>
-                </li>
-                <li><strong>Tailor Your Experience (UI Personalization Data - if consent given):</strong>
-                    <ul>
-                        <li>Customize the app's appearance and layout based on your saved preferences.</li>
-                    </ul>
-                </li>
-                <li><strong>Offer Personalized Content (Data Personalization Data - if consent given, UI Personalization active, and profile complete):</strong>
-                    <ul>
-                        <li>Utilize your provided profile information and interaction patterns to offer more relevant hadith suggestions or personalized app features.</li>
-                    </ul>
-                </li>
-                <li><strong>Enable Cloud Features (Cloud Storage Data - if consent given):</strong>
-                    <ul>
-                        <li>Securely back up and synchronize your history and favorites data across your devices, or assist in restoring it if you change devices.</li>
-                    </ul>
-                </li>
-                <li><strong>Deliver Prayer Reminders (Prayer Reminders Data - if consent given):</strong>
-                    <ul>
-                        <li>Calculate accurate prayer times based on your detected location using the Adhan calculation method, and schedule local notifications on your device.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Your images are processed locally on your device using our on-device ML model. Only the resulting object labels are sent to our hadith search service (OpenAI) to find relevant results.</p>
+<!-- Two-column doc -->
+<div class="doc-layout">
+  <aside class="doc-toc">
+    <div class="doc-toc-title">On this page</div>
+    <ul id="tocList">
+      <li><a href="#tldr">TL;DR</a></li>
+      <li><a href="#collect">Data we collect</a></li>
+      <li><a href="#use">How we use it</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#rights">Your GDPR rights</a></li>
+      <li><a href="#security">Data security</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+  </aside>
 
-            <h2>Third-Party Services</h2>
-            <p>Lightio uses the following third-party services:</p>
-            <ul>
-                <li><strong>OpenAI</strong> &mdash; AI-powered hadith search. Only object labels are transmitted; your images are never sent.</li>
-                <li><strong>Firebase (Google)</strong> &mdash; for push notifications (Firebase Cloud Messaging), phone number verification (Firebase Phone Auth), crash reporting (Firebase Crashlytics), anonymous analytics (Firebase Analytics), and optional cloud sync of your favorites and history (Cloud Firestore).</li>
-                <li><strong>Apple Push Notification service (APNs)</strong> &mdash; underlying delivery channel for push notifications on iOS.</li>
-            </ul>
-            <p>When you search for hadiths, only the object label (never the image) is sent to OpenAI's API to retrieve relevant results.</p>
+  <main class="doc-content">
+    <div class="tldr" id="tldr">
+      <div class="tldr-head">
+        <div class="ico">TL;DR</div>
+        <h3>The short version</h3>
+      </div>
+      <ul>
+        <li><strong>Images never leave your device.</strong> Object detection runs locally on your iPhone.</li>
+        <li><strong>Only the resulting label</strong> (like "date" or "cup") is sent to find a Hadith.</li>
+        <li><strong>5 separate consent toggles</strong> — analytics, personalization, cloud sync, etc. All opt-in.</li>
+        <li><strong>You can export or delete everything</strong> from the in-app Data Dashboard. Always.</li>
+        <li><strong>We're a 2-person team.</strong> We don't sell data. There's nothing to sell.</li>
+      </ul>
+    </div>
 
-            <h2>Your GDPR Rights</h2>
-            <p>Under the GDPR, you have the following rights:</p>
-            <ul>
-                <li>Right to access your data</li>
-                <li>Right to rectify inaccurate data</li>
-                <li>Right to erasure ("right to be forgotten")</li>
-                <li>Right to restrict processing</li>
-                <li>Right to data portability</li>
-                <li>Right to object to processing</li>
-            </ul>
-            <p>You can exercise these rights through the app's Privacy & Data settings.</p>
+    <h2 id="collect">Data we collect</h2>
+    <p>Lightio collects data only based on what you do in the app and which consent toggles you've enabled. Here's everything, in one place:</p>
 
-            <h2>Data Security</h2>
-            <p>We take the security of your data seriously:</p>
-            <ul>
-                <li>All data is encrypted during transmission</li>
-                <li>We use secure servers for our API</li>
-                <li>We regularly review our security practices</li>
-                <li>We limit access to your data to authorized personnel only</li>
-            </ul>
-            <p>In the event of a data breach that affects your personal data, we will notify you within 72 hours as required by GDPR.</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Data type</th><th>What &amp; where</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-name">Essential <div class="req-tag req">Required</div></td>
+          <td>
+            Images you capture (processed <strong>locally only</strong>), detection results (object labels), history of detected objects, and saved favorites. All stored on your device.
+          </td>
+        </tr>
+        <tr>
+          <td class="col-name">Analytics <div class="req-tag opt">Opt-in</div></td>
+          <td>Anonymous usage information — feature usage frequency, session duration, crash reports. Used only to improve stability and performance.</td>
+        </tr>
+        <tr>
+          <td class="col-name">UI Personalization <div class="req-tag opt">Opt-in</div></td>
+          <td>Theme choices, layout adjustments, and other interface preferences. Tailors how the app looks for you.</td>
+        </tr>
+        <tr>
+          <td class="col-name">Data Personalization <div class="req-tag opt">Opt-in</div></td>
+          <td>Profile data you voluntarily provide (gender, date of birth, email, phone) plus interaction patterns. Requires UI Personalization to be active.</td>
+        </tr>
+        <tr>
+          <td class="col-name">Cloud Storage <div class="req-tag opt">Opt-in</div></td>
+          <td>Securely backed-up history and favorites for cross-device sync. Images themselves are never part of cloud backup.</td>
+        </tr>
+        <tr>
+          <td class="col-name">Prayer &amp; Location <div class="req-tag opt">Opt-in</div></td>
+          <td>City, country, coordinates, and time zone — collected once for prayer time calculation. Notifications scheduled on-device.</td>
+        </tr>
+      </tbody>
+    </table>
 
-            <h2>Data Retention</h2>
-            <p>We retain your data for as long as necessary to provide you with our services:</p>
-            <ul>
-                <li>History data is stored locally until you delete it or clear your history.</li>
-                <li>Favorites are stored locally until you remove them.</li>
-                <li>User profile information (if provided for Data Personalization) is retained until you clear your profile or delete all user data.</li>
-                <li>If Cloud Storage consent is given, your backed-up data is retained in the cloud until you disable cloud storage for that data type or delete all your user data.</li>
-                <li>Location data (if Prayer Reminders is enabled) is retained in your profile until you remove it in Prayer Reminders settings or delete your account. Revoking Prayer Reminders consent deletes the stored location.</li>
-                <li>You can delete your local and, where applicable, cloud-stored data at any time through the app's settings.</li>
-            </ul>
-            <p>When you delete data through the app, it is permanently removed from your device and, if applicable, our cloud systems.</p>
+    <p>By default, only the Essential category is active. Everything else is off until you turn it on in <strong>Privacy &amp; Data settings</strong>.</p>
 
-            <h2>Children's Privacy</h2>
-            <p>Our app is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+    <h2 id="use">How we use your data</h2>
 
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
-            <p>We will also notify you through an in-app notification before the changes take effect.</p>
+    <h3>Provide core functionality</h3>
+    <p>Detect objects in your images using on-device machine learning. Find relevant Hadiths by sending the resulting label (not the image) to our search service. Maintain your local history and favorites.</p>
 
-            <h2>Contact Us</h2>
-            <p>If you have questions about this privacy policy or your data, please contact us at: <a href="mailto:hello@yogie.id">hello@yogie.id</a></p>
+    <h3>Improve the app</h3>
+    <p>If you opt into Analytics, we analyze usage patterns to find bugs, identify popular features, and prioritize work. All anonymous.</p>
+
+    <h3>Tailor your experience</h3>
+    <p>UI Personalization remembers your theme and layout preferences. Data Personalization uses your profile and interactions to suggest more relevant Hadiths.</p>
+
+    <h3>Enable cross-device features</h3>
+    <p>Cloud Storage securely syncs your history and favorites between your iPhones and iPads. Prayer Reminders use your location to calculate accurate times locally.</p>
+
+    <h2 id="third-party">Third-party services</h2>
+    <p>Lightio integrates with a small, intentional set of third-party services. Every one is named here:</p>
+    <ul>
+      <li><strong>OpenAI</strong> — Hadith search and AI-generated summaries. Only the object label is sent; never your image.</li>
+      <li><strong>Apple (Sign in with Apple, APNS, Core ML, MapKit)</strong> — authentication, push notifications, on-device ML, and location services.</li>
+      <li><strong>Firebase Authentication &amp; Phone Auth</strong> — optional sign-in and phone verification.</li>
+      <li><strong>Firebase Cloud Messaging</strong> — server-side delivery of push notifications you've opted into.</li>
+      <li><strong>Firebase Crashlytics</strong> — anonymized crash reports (only with Analytics consent). Declared in our App Privacy manifest.</li>
+      <li><strong>iCloud (via CloudKit)</strong> — Cloud Storage backup of favorites &amp; history.</li>
+    </ul>
+    <p>We do not use advertising SDKs, third-party analytics trackers, social media pixels, or marketing automation tools.</p>
+
+    <h2 id="rights">Your GDPR rights</h2>
+    <p>Under the GDPR (and similar regulations like CCPA, PDP, and PIPL), you have the following rights — all exercisable directly inside the app:</p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6m11-11h-6m-10 0H1"/></svg>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Mohammad Sani Suprayogi. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="support.html">Support</a>
-            <a href="privacy_policy.html">Privacy Policy</a>
-            <a href="version_history.html">Version History</a>
+        <h4>Right to access</h4>
+        <p>View all data Lightio has stored about you — in the Data Dashboard.</p>
+      </div>
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         </div>
-    </footer>
+        <h4>Right to rectify</h4>
+        <p>Correct inaccurate profile or preference data at any time.</p>
+      </div>
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        </div>
+        <h4>Right to erasure</h4>
+        <p>"Right to be forgotten" — delete everything with one tap.</p>
+      </div>
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h4>Right to restrict</h4>
+        <p>Pause processing of any specific data category via consent toggles.</p>
+      </div>
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h4>Right to portability</h4>
+        <p>Export your data as a standard JSON file you can take anywhere.</p>
+      </div>
+      <div class="right-card">
+        <div class="ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h4>Right to object</h4>
+        <p>Decline any optional processing without losing core functionality.</p>
+      </div>
+    </div>
 
-    <script src="assets/js/script.js"></script>
+    <h2 id="security">Data security</h2>
+    <p>We take the security of your data seriously:</p>
+    <ul>
+      <li>All data is encrypted during transmission (TLS 1.3) and at rest.</li>
+      <li>Our APIs run on hardened, regularly-patched cloud infrastructure.</li>
+      <li>Access to backend systems is limited to authorized personnel and audited.</li>
+      <li>We regularly review our security practices against industry standards.</li>
+    </ul>
+    <p>In the event of a data breach affecting your personal data, we will notify you <strong>within 72 hours</strong> as required by GDPR.</p>
+
+    <h2 id="retention">Data retention</h2>
+    <p>We keep your data only as long as needed to provide the service:</p>
+    <ul class="retention-list">
+      <li>
+        <span class="where">History</span>
+        <span class="desc">Stored locally on your device until you delete it or clear your history.</span>
+      </li>
+      <li>
+        <span class="where">Favorites</span>
+        <span class="desc">Stored locally until you remove them or delete all user data.</span>
+      </li>
+      <li>
+        <span class="where">User profile</span>
+        <span class="desc">Retained until you clear your profile or delete all user data.</span>
+      </li>
+      <li>
+        <span class="where">Cloud backup</span>
+        <span class="desc">If consented, retained in iCloud until you disable Cloud Storage for that data type.</span>
+      </li>
+      <li>
+        <span class="where">Analytics</span>
+        <span class="desc">Aggregated and anonymized; raw events deleted within 90 days.</span>
+      </li>
+      <li>
+        <span class="where">Crash reports</span>
+        <span class="desc">Retained for 90 days for diagnosis, then automatically purged.</span>
+      </li>
+    </ul>
+    <p>When you delete data through the app, it is permanently removed from your device and, where applicable, our cloud systems.</p>
+
+    <h2 id="children">Children's privacy</h2>
+    <p>Lightio is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us so we can promptly remove it.</p>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+    <ul>
+      <li>Posting the new policy on this page with an updated "Last updated" date.</li>
+      <li>Showing an in-app notification before the changes take effect, where required.</li>
+    </ul>
+    <p>You can review previous versions of this policy at any time by contacting us.</p>
+
+    <h2 id="contact">Contact us</h2>
+    <div class="contact-card">
+      <h3>Questions about your privacy?</h3>
+      <p>We respond personally — usually within 48 hours. There's no support ticket queue, just two people.</p>
+      <a href="mailto:hello@yogie.id">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        hello@yogie.id
+      </a>
+    </div>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+        <span>Lightio</span>
+      </a>
+      <p>Your intelligent visual Hadith guide. Made in Yogyakarta — for the global Ummah.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#prayer">Prayer Reminders</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="version_history.html">Version history</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="support.html">Help &amp; Support</a></li>
+        <li><a href="press-kit.html">Press kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hello@yogie.id">hello@yogie.id</a></li>
+        <li><a href="https://apps.apple.com/us/app/lightio/id6746337503" target="_blank" rel="noopener">App Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025–2026 Mohammad Sani Suprayogi. All rights reserved.</span>
+    <span>Made with care · Available worldwide</span>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('primary-nav');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Active TOC link based on scroll position
+const tocLinks = document.querySelectorAll('#tocList a');
+const sections = [...tocLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+function updateToc() {
+  const y = window.scrollY + 120;
+  let activeIdx = 0;
+  sections.forEach((s, i) => { if (s.offsetTop <= y) activeIdx = i; });
+  tocLinks.forEach((a, i) => a.classList.toggle('active', i === activeIdx));
+}
+window.addEventListener('scroll', updateToc, { passive: true });
+updateToc();
+</script>
 </body>
 </html>

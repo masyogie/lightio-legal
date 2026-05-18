@@ -1,79 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lightio - Help & Support</title>
-    <meta name="description" content="Get help and support for the Lightio app. Find answers to your questions or contact us for assistance.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
-    <link rel="canonical" href="https://lightio.yogie.id/support.html">
-    <style>
-        .legal-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            line-height: 1.8;
-        }
-        .legal-container h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help &amp; Support — Lightio</title>
+<meta name="description" content="Get help with Lightio. Troubleshooting, FAQs, contact, and information about your account &amp; data.">
+<meta property="og:title" content="Help &amp; Support — Lightio">
+<meta property="og:description" content="Troubleshooting, FAQs, and account help for Lightio. Two-person team, personal responses.">
+<meta property="og:image" content="https://lightio.yogie.id/assets/images/Lightio_Icon_iOS.png">
+<meta property="og:url" content="https://lightio.yogie.id/support.html">
+<meta property="og:type" content="article">
+<link rel="icon" href="assets/images/Lightio_Icon_iOS.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio App Icon">
-                    <h1>Lightio</h1>
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
-            <ul id="primary-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy_policy.html">Privacy</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="legal-container">
-            <h1>Lightio Help & Support</h1>
-            
-            <h2>About Lightio</h2>
-            <p>Lightio combines on-device object detection with AI-powered Hadith search to help users discover relevant Hadiths from objects in their surroundings, making Islamic learning more accessible and interactive.</p>
+<header>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">
+      <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+      <span>Lightio</span>
+    </a>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#prayer">Prayer</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="version_history.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+    <a href="https://apps.apple.com/us/app/lightio/id6746337503" class="nav-cta" target="_blank" rel="noopener">
+      Download
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
 
-            <h2>About Us</h2>
-            <p>Hi, I'm Mohammad Sani Suprayogi (Yogie), and together with my wife, Ami, we are the team behind Lightio. I initiated this project, originally from Yogyakarta, Indonesia, to bridge technology and Islamic education. Ami has been instrumental in supporting and contributing to the development of Lightio, helping to bring this vision to life. Our shared goal is to make Islamic learning more accessible and interactive.</p>
+<!-- Page header -->
+<section class="page-header">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Help &amp; Support</span>
+    </div>
+    <h1>Help &amp; Support</h1>
+    <p class="lede">We're a small team and we read every message personally. Most questions are answered below — for everything else, just email us.</p>
+    <div class="page-meta">
+      <span class="page-meta-pill"><span class="dot"></span> Usually responds within 48h</span>
+      <span class="page-meta-pill">✉️ hello@yogie.id</span>
+      <span class="page-meta-pill">🌍 Worldwide support</span>
+    </div>
+  </div>
+</section>
 
-            <h2>Account &amp; Data Management</h2>
-            <p>You can manage your account, consent settings, and personal data directly inside the app:</p>
-            <ul>
-                <li><strong>Sign in:</strong> Use Sign in with Apple, email &amp; password, or verify your phone number.</li>
-                <li><strong>Consent:</strong> Toggle Analytics, UI Personalization, Data Personalization, Cloud Sync, and Prayer Reminders independently in Privacy &amp; Data settings.</li>
-                <li><strong>Export or delete your data:</strong> Use the Data Dashboard in Settings to export or permanently delete your history, favorites, and profile.</li>
-            </ul>
-
-            <h2>Help &amp; Support Contact</h2>
-            <p>For any questions or support needs, please contact us at <a href="mailto:hello@yogie.id">hello@yogie.id</a>. We're happy to help with any issues or feedback you might have.</p>
+<!-- Quick links -->
+<section style="padding: 56px 0 0;">
+  <div class="container" style="max-width: 1080px;">
+    <div class="support-grid">
+      <a href="#troubleshoot" class="support-tile">
+        <div class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Mohammad Sani Suprayogi. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="support.html">Support</a>
-            <a href="privacy_policy.html">Privacy Policy</a>
-            <a href="version_history.html">Version History</a>
+        <h3>Troubleshooting</h3>
+        <p>Common issues with detection, prayer reminders, sync, and notifications — with step-by-step fixes.</p>
+      </a>
+      <a href="#faq" class="support-tile">
+        <div class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
-    </footer>
+        <h3>FAQ</h3>
+        <p>Most common questions about how Lightio works, what it costs, and how your data is handled.</p>
+      </a>
+      <a href="#account" class="support-tile">
+        <div class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Account &amp; data</h3>
+        <p>Sign-in options, consent management, data export, and how to delete your account permanently.</p>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <script src="assets/js/script.js"></script>
+<!-- Troubleshooting -->
+<section id="troubleshoot" style="padding: 48px 0;">
+  <div class="container" style="max-width: 1080px;">
+    <div style="margin-bottom: 32px;">
+      <span class="eyebrow">Troubleshooting</span>
+      <h2 style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">Quick fixes for common issues</h2>
+    </div>
+
+    <div class="troubleshoot">
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <div>
+            <h4>Detection isn't working</h4>
+            <p class="q">"The camera opens but no objects are detected."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Make sure Lightio has camera permission in iOS Settings → Privacy &amp; Security → Camera.</li>
+          <li>Ensure the object is well-lit and centered in the frame.</li>
+          <li>Try a different angle — bounding boxes work best on objects shown side-on.</li>
+          <li>Check Settings → Detection Threshold and lower it if confidence is too high.</li>
+          <li>Force-quit and reopen the app to reset the ML pipeline.</li>
+        </ol>
+      </div>
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div>
+            <h4>Prayer notifications missing</h4>
+            <p class="q">"I enabled Prayer Reminders but never get notified."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Confirm Prayer Reminders is on in <strong>Settings → Privacy &amp; Data</strong>.</li>
+          <li>Check iOS Settings → Notifications → Lightio — ensure alerts are enabled.</li>
+          <li>Verify your location is set in <strong>Settings → Prayer Times</strong>.</li>
+          <li>Try toggling Focus mode off — Do Not Disturb suppresses notifications by default.</li>
+          <li>Open the app at least once a day so iOS keeps notifications scheduled.</li>
+        </ol>
+      </div>
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
+          <div>
+            <h4>Sync isn't working</h4>
+            <p class="q">"My favorites don't appear on my other devices."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Make sure Cloud Storage consent is enabled on <em>both</em> devices.</li>
+          <li>Verify you're signed in with the same Apple ID / Lightio account on both.</li>
+          <li>Open the app on the source device first, then on the destination device, to trigger sync.</li>
+          <li>Check iCloud is signed in and has free storage in iOS Settings.</li>
+          <li>If sync is stuck, force-quit and reopen — we now preserve local data if cloud fetch fails.</li>
+        </ol>
+      </div>
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div>
+            <h4>Wrong prayer times</h4>
+            <p class="q">"The times shown don't match my mosque's schedule."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Different communities use different methods — check Settings → Prayer Times → Method.</li>
+          <li>Try matching your local authority (ISNA for North America, Umm al-Qura for the Gulf, etc.).</li>
+          <li>For Asr, choose between Standard (Shafi'i) and Hanafi calculation as needed.</li>
+          <li>Verify your location is up to date — update it if you've traveled.</li>
+          <li>Times may differ by 1–2 minutes from local prints due to rounding — this is normal.</li>
+        </ol>
+      </div>
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Hadith search is slow</h4>
+            <p class="q">"After detection, finding a Hadith takes too long."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Hadith search requires an internet connection — check Wi-Fi or cellular data.</li>
+          <li>The first search after launch is sometimes slower as the AI backend warms up.</li>
+          <li>Try a different detected object if one label has fewer matches.</li>
+          <li>If you're traveling internationally, response time may be higher.</li>
+          <li>Restart the app if requests time out repeatedly.</li>
+        </ol>
+      </div>
+
+      <div class="trouble-card">
+        <div class="head">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h4>AI summary in wrong language</h4>
+            <p class="q">"The summary is in English but I want my own language."</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>Lightio uses your iPhone's <strong>system language</strong>, not the app's UI language.</li>
+          <li>Change iOS Settings → General → Language &amp; Region → iPhone Language.</li>
+          <li>Force-quit and reopen Lightio for the change to take effect.</li>
+          <li>If your language isn't supported, the AI falls back to English.</li>
+          <li>Email us at hello@yogie.id if you'd like a specific language prioritized.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ section -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- Account & data -->
+<section id="account">
+  <div class="container" style="max-width: 1080px;">
+    <div style="margin-bottom: 32px;">
+      <span class="eyebrow">Account &amp; data</span>
+      <h2 style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">Manage your account and data</h2>
+      <p style="color: var(--text-2); font-size: 17px; margin-top: 12px;">Everything lives inside the app. You don't need to contact us to manage your data.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Sign in options</h3>
+        <p>Use Sign in with Apple (recommended for privacy), email &amp; password, or verify your phone number with an SMS code.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Toggle consent</h3>
+        <p>Independently enable or disable Analytics, UI Personalization, Data Personalization, Cloud Sync, and Prayer Reminders in Privacy &amp; Data settings.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>Export your data</h3>
+        <p>Use the Data Dashboard in Settings to export your history, favorites, and profile as a standard file you can take anywhere.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#FFE8E8;color:#D92E2E">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        </div>
+        <h3>Delete everything</h3>
+        <p>Permanently remove your local data, cloud backup, and account from Settings → Data Dashboard → Delete All Data.</p>
+      </div>
+    </div>
+
+    <div class="response-times">
+      <div class="item">
+        <div class="num">~48h</div>
+        <div class="lbl">Typical response time</div>
+      </div>
+      <div class="item">
+        <div class="num">72h</div>
+        <div class="lbl">Max for data-breach notification</div>
+      </div>
+      <div class="item">
+        <div class="num">2</div>
+        <div class="lbl">People reading every email</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section style="padding: 0 0 88px;">
+  <div class="container" style="max-width: 720px;">
+    <div class="contact-card" style="text-align: center; padding: 48px;">
+      <h3 style="font-size: 24px; margin-bottom: 10px;">Still need help?</h3>
+      <p style="font-size: 16px; max-width: 480px; margin: 0 auto 24px;">Send us an email with as much detail as you can — device model, iOS version, what you were trying to do. We'll get back to you personally.</p>
+      <a href="mailto:hello@yogie.id?subject=Lightio%20support%20request" style="font-size: 16px; padding: 14px 24px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email hello@yogie.id
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Lightio_Icon_iOS.png" alt="Lightio">
+        <span>Lightio</span>
+      </a>
+      <p>Your intelligent visual Hadith guide. Made in Yogyakarta — for the global Ummah.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#prayer">Prayer Reminders</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="version_history.html">Version history</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="support.html">Help &amp; Support</a></li>
+        <li><a href="press-kit.html">Press kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hello@yogie.id">hello@yogie.id</a></li>
+        <li><a href="https://apps.apple.com/us/app/lightio/id6746337503" target="_blank" rel="noopener">App Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025–2026 Mohammad Sani Suprayogi. All rights reserved.</span>
+    <span>Made with care · Available worldwide</span>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('primary-nav');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// FAQ
+const faqs = [
+  {
+    q: 'Is Lightio really free? What\'s the catch?',
+    a: 'Yes — Lightio is completely free with no ads. We may add optional in-app donation options later for users who want to support development, but core features will always remain free.'
+  },
+  {
+    q: 'Does Lightio send my photos anywhere?',
+    a: 'No. Image processing happens entirely on your iPhone using the Apple Neural Engine. Only the resulting object label (like "date" or "cup") is sent to our Hadith search backend — never the image itself.'
+  },
+  {
+    q: 'How accurate are the Hadiths?',
+    a: 'Lightio draws from authentic Hadith collections including Sahih al-Bukhari, Sahih Muslim, and the four Sunan. Each result includes the source and narrator chain so you can verify it. AI-generated summaries are clearly labeled and always paired with the Arabic original.'
+  },
+  {
+    q: 'Which prayer time calculation method should I choose?',
+    a: 'Lightio offers 8 widely-used methods. MWL is a safe global default. ISNA works well in North America, Egypt for North Africa &amp; the Levant, Umm al-Qura for the Gulf, Karachi for South Asia, Muhammadiyah and Kemenag for Indonesia, and Tehran for Iran.'
+  },
+  {
+    q: 'What devices does Lightio support?',
+    a: 'iPhone running iOS 18.6 or later. The on-device ML model uses Core ML and the Apple Neural Engine, which is available on most modern iPhones.'
+  },
+  {
+    q: 'Why only 80 objects?',
+    a: 'Lightio uses the COCO object vocabulary — 80 categories that cover most common everyday objects. We deliberately chose breadth over depth so detection is fast, accurate, and works without a server. Expanding vocabulary is on our roadmap.'
+  },
+  {
+    q: 'Can I use Lightio offline?',
+    a: 'Object detection and viewing your saved favorites work fully offline. Hadith search requires an internet connection because the AI backend lives in the cloud. Prayer time calculation works offline once your location is set.'
+  },
+  {
+    q: 'Will Lightio come to Android?',
+    a: 'Not yet. As a small two-person team, we\'re focused on making the iOS version excellent first. Stay tuned at hello@yogie.id for updates.'
+  },
+  {
+    q: 'How do I delete my account permanently?',
+    a: 'Open Settings → Data Dashboard → Delete All Data. This removes your local data, cloud backup, profile, and account everywhere — there\'s no waiting period and no need to email us.'
+  },
+  {
+    q: 'I found a wrong translation or misattributed Hadith. What do I do?',
+    a: 'Please email us at hello@yogie.id with a screenshot and as much context as you can — the detected object, the result, and what you believe is correct. We take corrections seriously and update the backend regularly.'
+  },
+];
+const faqList = document.getElementById('faqList');
+faqList.innerHTML = faqs.map(f => `
+  <div class="faq-item">
+    <button class="faq-q">
+      <span>${f.q}</span>
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-a"><div>${f.a}</div></div>
+  </div>
+`).join('');
+faqList.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    faqList.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+faqList.querySelector('.faq-item')?.classList.add('open');
+</script>
 </body>
 </html>

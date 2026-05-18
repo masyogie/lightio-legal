@@ -1,90 +1,90 @@
-# Privacy Policy for Lightio
+# Lightio — Privacy Policy
 
-**Last updated: May 16, 2025**
+**Last updated: May 17, 2026**
 
-Lightio collects data based on your interactions and consent settings:
+> **TL;DR**
+> - Images never leave your device. Object detection runs locally on your iPhone.
+> - Only the resulting label (like "date" or "cup") is sent to find a Hadith.
+> - 5 separate consent toggles — analytics, personalization, cloud sync, etc. All opt-in.
+> - You can export or delete everything from the in-app Data Dashboard. Always.
+> - We're a 2-person team. We don't sell data. There's nothing to sell.
 
-## Data We Collect
+For the full styled version, see [privacy_policy.html](privacy_policy.html).
 
-*   **Essential Data (Collected by default for core functionality):**
-    *   Images you capture or upload for object detection (these are processed locally on your device and are not transmitted unless you explicitly use a feature that requires it, which would be separately disclosed).
-    *   Detection results (object labels derived from your images) used to find relevant hadiths.
-    *   Your history of detected objects and viewed hadiths (stored locally on your device).
-    *   Favorites you save (stored locally on your device).
-*   **Analytics Data (Only if 'Analytics' consent is given):**
-    *   Anonymous app usage information, such as feature usage frequency, session duration, and crash reports. This helps us understand how our app is used and to improve its performance and stability.
-*   **UI Personalization Data (Only if 'UI Personalization' consent is given):**
-    *   Preferences you set for the app's user interface (e.g., theme choices, layout adjustments) to tailor the app's appearance to your liking.
-*   **Data Personalization Data (Only if 'Data Personalization' consent is given, 'UI Personalization' is active, and your profile is complete):**
-    *   User profile information you voluntarily provide, such as gender, date of birth, email address, or phone number.
-    *   Your interaction patterns with hadiths and detected objects.
-*   **Cloud Storage Data (Only if 'Cloud Storage' consent is given):**
-    *   If you opt-in for cloud storage, your history and favorites data may be securely backed up to the cloud. This is to enable synchronization across devices or data recovery. Images themselves are not part of this standard cloud backup unless a specific feature explicitly states so and obtains separate confirmation.
+## Data we collect
 
-By default, images and primary data like history and favorites are stored locally on your device.
+Lightio collects data only based on what you do in the app and which consent toggles you've enabled.
 
-## How We Use Your Data
+### Essential (Required)
+Images you capture (processed **locally only**), detection results (object labels), history of detected objects, and saved favorites. All stored on your device.
 
-We use your data to:
+### Analytics (Opt-in)
+Anonymous usage information — feature usage frequency, session duration, crash reports. Used only to improve stability and performance.
 
-*   **Provide Core Functionality (Essential Data):**
-    *   Detect objects in your images (local processing on your device).
-    *   Find relevant hadiths based on detected object labels by sending these labels (not the images themselves) to our hadith search service.
-    *   Maintain your local history and favorites.
-*   **Improve Our App (Analytics Data - if consent given):**
-    *   Analyze usage patterns to identify popular features, troubleshoot issues, and enhance overall app functionality and user experience.
-*   **Tailor Your Experience (UI Personalization Data - if consent given):**
-    *   Customize the app's appearance and layout based on your saved preferences.
-*   **Offer Personalized Content (Data Personalization Data - if consent given, UI Personalization active, and profile complete):**
-    *   Utilize your provided profile information and interaction patterns to offer more relevant hadith suggestions or personalized app features.
-*   **Enable Cloud Features (Cloud Storage Data - if consent given):**
-    *   Securely back up and synchronize your history and favorites data across your devices, or assist in restoring it if you change devices.
+### UI Personalization (Opt-in)
+Theme choices, layout adjustments, and other interface preferences.
 
-Your images are processed locally on your device using our ML model. Only object labels are sent to our hadith search service (DigitalOcean GenAI) to find relevant results.
+### Data Personalization (Opt-in)
+Profile data you voluntarily provide (gender, date of birth, email, phone) plus interaction patterns. Requires UI Personalization to be active.
+
+### Cloud Storage (Opt-in)
+Securely backed-up history and favorites for cross-device sync. Images themselves are never part of cloud backup.
+
+### Prayer & Location (Opt-in)
+City, country, coordinates, and time zone — collected once for prayer time calculation. Notifications scheduled on-device.
+
+By default, only the Essential category is active. Everything else is off until you turn it on in **Privacy & Data settings**.
+
+## How we use your data
+
+* **Provide core functionality** — detect objects on-device, find relevant Hadiths using object labels (not images), maintain local history and favorites.
+* **Improve the app** — analyze anonymous usage patterns if Analytics is enabled.
+* **Tailor your experience** — remember UI preferences; suggest more relevant Hadiths from your interactions.
+* **Enable cross-device features** — sync history and favorites between your devices; calculate prayer times from your location.
 
 ## Third-Party Services
 
-Lightio uses the following third-party services:
+Lightio integrates with a small, intentional set of third-party services:
 
-*   DigitalOcean GenAI service for hadith search
+* **OpenAI** — Hadith search and AI-generated summaries. Only the object label is sent; never your image.
+* **Apple (Sign in with Apple, APNS, Core ML, MapKit)** — authentication, push notifications, on-device ML, and location.
+* **Firebase Authentication & Phone Auth** — optional sign-in and phone verification.
+* **Firebase Cloud Messaging** — server-side delivery of push notifications you've opted into.
+* **Firebase Crashlytics** — anonymized crash reports (only with Analytics consent).
+* **iCloud (via CloudKit)** — Cloud Storage backup of favorites & history.
 
-When you search for hadiths, the object label (not the image) is sent to our secure API hosted on DigitalOcean.
+We do not use advertising SDKs, third-party analytics trackers, social media pixels, or marketing automation tools.
 
 ## Your GDPR Rights
 
-Under the GDPR, you have the following rights:
+Under the GDPR (and similar regulations like CCPA, PDP, and PIPL), you have:
 
-*   Right to access your data
-*   Right to rectify inaccurate data
-*   Right to erasure ("right to be forgotten")
-*   Right to restrict processing
-*   Right to data portability
-*   Right to object to processing
+* Right to access your data
+* Right to rectify inaccurate data
+* Right to erasure ("right to be forgotten")
+* Right to restrict processing
+* Right to data portability
+* Right to object to processing
 
-You can exercise these rights through the app's Privacy & Data settings.
+You can exercise these rights through the app's Privacy & Data settings and Data Dashboard.
 
 ## Data Security
 
-We take the security of your data seriously:
-
-*   All data is encrypted during transmission
-*   We use secure servers for our API
-*   We regularly review our security practices
-*   We limit access to your data to authorized personnel only
-
-In the event of a data breach that affects your personal data, we will notify you within 72 hours as required by GDPR.
+* All data is encrypted during transmission (TLS 1.3) and at rest.
+* Our APIs run on hardened, regularly-patched cloud infrastructure.
+* Access to backend systems is limited to authorized personnel and audited.
+* In the event of a data breach affecting your personal data, we will notify you **within 72 hours** as required by GDPR.
 
 ## Data Retention
 
-We retain your data for as long as necessary to provide you with our services:
+* **History** — stored locally on your device until you delete it.
+* **Favorites** — stored locally until you remove them.
+* **User profile** — retained until you clear your profile or delete all user data.
+* **Cloud backup** — retained in iCloud until you disable Cloud Storage for that data type.
+* **Analytics** — aggregated and anonymized; raw events deleted within 90 days.
+* **Crash reports** — retained for 90 days for diagnosis, then automatically purged.
 
-*   History data is stored locally until you delete it or clear your history.
-*   Favorites are stored locally until you remove them.
-*   User profile information (if provided for Data Personalization) is retained until you clear your profile or delete all user data.
-*   If Cloud Storage consent is given, your backed-up data is retained in the cloud until you disable cloud storage for that data type or delete all your user data.
-*   You can delete your local and, where applicable, cloud-stored data at any time through the app's settings.
-
-When you delete data through the app, it is permanently removed from your device and, if applicable, our cloud systems.
+When you delete data through the app, it is permanently removed from your device and, where applicable, our cloud systems.
 
 ## Children's Privacy
 
@@ -92,10 +92,8 @@ Our app is not intended for children under 13 years of age. We do not knowingly 
 
 ## Changes to This Privacy Policy
 
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-
-We will also notify you through an in-app notification before the changes take effect.
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date. Material changes are also surfaced as an in-app notification before they take effect.
 
 ## Contact Us
 
-If you have questions about this privacy policy or your data, please contact us at: hello@yogie.id
+If you have questions about this privacy policy or your data, please contact us at: **hello@yogie.id**
