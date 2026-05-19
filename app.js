@@ -67,10 +67,13 @@ function renderFeatures(cat) {
   `).join('');
 }
 document.querySelectorAll('.tab-btn').forEach(btn => {
+  const cat = btn.dataset.cat;
+  const countEl = btn.querySelector('.tab-count');
+  if (countEl && featureCats[cat]) countEl.textContent = featureCats[cat].length;
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderFeatures(btn.dataset.cat);
+    renderFeatures(cat);
   });
 });
 renderFeatures('discover');
