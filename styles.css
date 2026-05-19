@@ -436,6 +436,26 @@ section.tight { padding: 56px 0; }
 }
 .tab-btn:hover { border-color: var(--text); }
 .tab-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+.tab-count {
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--bg-tint);
+  color: var(--text-3);
+}
+.tab-btn.active .tab-count {
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+}
+.tab-hint {
+  margin: -22px 0 28px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-3);
+}
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
