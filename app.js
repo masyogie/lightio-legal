@@ -42,6 +42,7 @@ const featureCats = {
     { icon: '🌍', title: '8 Global Calculation Methods', desc: 'MWL, ISNA, Egypt, Umm al-Qura, Karachi, Muhammadiyah, Kemenag, and Tehran — covering Muslims everywhere.' },
     { icon: '📍', title: 'Auto-detected Location', desc: 'Lightio uses your city, country, and time zone to calculate prayer times accurately wherever you travel.' },
     { icon: '📐', title: 'Asr Calculation Choice', desc: 'Choose between Standard and Hanafi Asr calculation — framed neutrally, no madhab labels.' },
+    { icon: '🌤️', title: 'Sun & Weather Insights', desc: 'Sunrise, solar noon, and sunset appear beneath Today\'s Schedule, and notifications enrich hadith reflections with current weather — powered by Apple WeatherKit.' },
   ],
   privacy: [
     { icon: '🔒', title: 'On-Device Processing', desc: 'Images you capture never leave your iPhone. Only the resulting object label is sent for Hadith lookup.' },
