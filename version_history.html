@@ -48,8 +48,8 @@
     <h1>Version history</h1>
     <p class="lede">A focused product, shipped in small, deliberate updates. Every change we've made, in order — with category tags so you can see what evolved.</p>
     <div class="page-meta">
-      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6 · May 17, 2026</span>
-      <span class="page-meta-pill">📦 6 releases since launch</span>
+      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.1 · May 24, 2026</span>
+      <span class="page-meta-pill">📦 7 releases since launch</span>
       <span class="page-meta-pill">⚡ Frequent updates</span>
     </div>
   </div>
@@ -71,13 +71,36 @@
 
     <div class="timeline" id="timeline">
 
-      <div class="timeline-item latest" data-tags="prayer privacy platform fix">
+      <div class="timeline-item latest" data-tags="prayer privacy ui platform">
         <div class="timeline-card">
           <div class="tl-head">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-              <span class="tl-vnum">v1.6</span>
+              <span class="tl-vnum">v1.6.1</span>
               <span class="tl-latest">Latest</span>
             </div>
+            <span class="tl-date">May 24, 2026</span>
+          </div>
+          <h3>Sun &amp; weather come to Prayer Reminders</h3>
+          <p class="summary">A focused follow-up to v1.6 that brings the sky and weather into Prayer Reminders, plus quality-of-life polish for the schedule view.</p>
+          <div class="tl-tags">
+            <span class="tl-tag prayer">Prayer</span>
+            <span class="tl-tag privacy">Privacy</span>
+            <span class="tl-tag ui">UI &amp; UX</span>
+            <span class="tl-tag platform">Platform</span>
+          </div>
+          <ul>
+            <li><strong>Sun Today (via Apple WeatherKit).</strong> Sunrise, solar noon, and sunset now appear beneath Today's Schedule. Uses the latitude and longitude already stored in your prayer profile — no additional personal data is sent.</li>
+            <li><strong>Weather-aware reflections.</strong> At prayer-time notifications, Lightio enriches hadith reflection search with current weather — for example, surfacing rain-related hadiths when it's raining at your location.</li>
+            <li><strong>Dynamic schedule &amp; location refresh.</strong> The schedule now recalculates day-to-day drift correctly, and refreshing your location updates prayer times immediately.</li>
+            <li><strong>UX polish.</strong> Apply button is disabled when the calculation has no unsaved changes; today's date is shown in the Today's Schedule section header.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-tags="prayer privacy platform fix">
+        <div class="timeline-card">
+          <div class="tl-head">
+            <span class="tl-vnum">v1.6</span>
             <span class="tl-date">May 17, 2026</span>
           </div>
           <h3>Prayer Reminders &amp; reliable cloud sync</h3>

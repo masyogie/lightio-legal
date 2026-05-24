@@ -301,6 +301,9 @@
     </ul>
     <p>You can also override the Asr calculation between Standard (Shafi'i) and Hanafi behavior independently of your chosen method.</p>
 
+    <h3>Sun visuals &amp; weather context (v1.6.1+)</h3>
+    <p>Sunrise, solar noon, and sunset shown beneath Today's Schedule are fetched from <strong>Apple WeatherKit</strong> using the latitude and longitude already stored in your prayer profile. These values are display-only — actual prayer time calculation remains fully on-device via Adhan. Current weather conditions are also fetched at prayer notifications to enrich hadith reflection search (e.g., surfacing rain-related hadiths when it's raining at your location). No additional personal data is sent to WeatherKit beyond the coordinates already in your profile.</p>
+
     <h2 id="limits">Known limitations</h2>
     <p>We'd rather you know the limits up front than discover them disappointed.</p>
 
