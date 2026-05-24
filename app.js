@@ -1,3 +1,5 @@
+import * as adhan from 'https://cdn.jsdelivr.net/npm/adhan@4.4.3/+esm';
+
 // ===== Mobile nav =====
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('primary-nav');
@@ -79,95 +81,114 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 renderFeatures('discover');
 
-// ===== Prayer preset switch =====
-const prayerData = {
-  mwl: {
-    label: 'MWL · Muslim World League',
-    loc: '📍 Universal default · Fajr 18° / Isha 17°',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:21', sub: 'Fajr angle 18°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
-      { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:47', sub: 'Isha angle 17°' },
-    ]
-  },
-  isna: {
-    label: 'ISNA · Islamic Society of North America',
-    loc: '📍 North America · Fajr 15° / Isha 15°',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:38', sub: 'Fajr angle 15°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
-      { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:31', sub: 'Isha angle 15°' },
-    ]
-  },
-  egypt: {
-    label: 'Egypt · General Authority of Survey',
-    loc: '📍 North Africa &amp; Levant · Fajr 19.5° / Isha 17.5°',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:14', sub: 'Fajr angle 19.5°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
-      { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:51', sub: 'Isha angle 17.5°' },
-    ]
-  },
-  makkah: {
-    label: 'Umm al-Qura · Makkah, Saudi Arabia',
-    loc: '📍 Gulf region · Fajr 18.5° / Isha 90 min after Maghrib',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:18', sub: 'Fajr angle 18.5°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
-      { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:53', sub: '90 min after Maghrib' },
-    ]
-  },
-  karachi: {
-    label: 'Karachi · University of Islamic Sciences',
-    loc: '📍 South Asia · Fajr 18° / Isha 18°',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:21', sub: 'Fajr angle 18°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '16:22', sub: 'Hanafi calculation' },
-      { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:55', sub: 'Isha angle 18°' },
-    ]
-  },
-  muhammadiyah: {
-    label: 'Muhammadiyah · Munas Tarjih ke-31',
-    loc: '📍 Indonesia · Fajr 20° / Isha 18°',
-    times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:13', sub: 'Fajr angle 20°' },
-      { name: 'Sunrise', glyph: '☀', time: '05:34', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '11:42', sub: 'Zenith + buffer' },
-      { name: 'Asr', glyph: 'ع', time: '15:04', sub: 'Standard (Shafi\'i)' },
-      { name: 'Maghrib', glyph: 'م', time: '17:51', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:02', sub: 'Isha angle 18°' },
-    ]
-  }
+// ===== Prayer preset switch (live Adhan calculation) =====
+const MECCA   = { coords: [21.4225, 39.8262],  tz: 'Asia/Riyadh',  city: 'Mecca, Saudi Arabia' };
+const YOGYA   = { coords: [-7.7956, 110.3695], tz: 'Asia/Jakarta', city: 'Yogyakarta, Indonesia' };
+
+const PRESETS = {
+  mwl:          { label: 'MWL · Muslim World League',               loc: MECCA, note: 'Fajr 18° / Isha 17°' },
+  isna:         { label: 'ISNA · Islamic Society of North America', loc: MECCA, note: 'Fajr 15° / Isha 15°' },
+  egypt:        { label: 'Egypt · General Authority of Survey',     loc: MECCA, note: 'Fajr 19.5° / Isha 17.5°' },
+  makkah:       { label: 'Umm al-Qura · Makkah, Saudi Arabia',      loc: MECCA, note: 'Fajr 18.5° / Isha 90 min after Maghrib' },
+  karachi:      { label: 'Karachi · University of Islamic Sciences', loc: MECCA, note: 'Fajr 18° / Isha 18°' },
+  tehran:       { label: 'Tehran · Institute of Geophysics',         loc: MECCA, note: 'Fajr 17.7° / Isha 14° / Maghrib 4.5°' },
+  muhammadiyah: { label: 'Muhammadiyah · Munas Tarjih ke-31',        loc: YOGYA, note: 'Fajr 18° / Isha 18° (2021 decree)' },
+  kemenag:      { label: 'Kemenag · Ministry of Religious Affairs',  loc: YOGYA, note: 'Fajr 20° / Isha 18°' },
 };
-function renderPrayer(preset) {
-  const data = prayerData[preset];
-  document.getElementById('presetLabel').textContent = data.label;
-  const locEl = document.getElementById('presetLoc');
-  if (locEl) locEl.innerHTML = data.loc;
-  document.getElementById('prayerRows').innerHTML = data.times.map(t => `
-    <div class="prayer-row ${t.next ? 'next' : ''}">
-      <span class="glyph">${t.glyph}</span>
-      <div class="name">${t.name}<small>${t.sub}</small></div>
-      <span class="time">${t.time}</span>
-      <span class="bell">${t.next ? '🔔' : '○'}</span>
-    </div>
-  `).join('');
+
+function paramsFor(key) {
+  switch (key) {
+    case 'mwl':     return adhan.CalculationMethod.MuslimWorldLeague();
+    case 'isna':    return adhan.CalculationMethod.NorthAmerica();
+    case 'egypt':   return adhan.CalculationMethod.Egyptian();
+    case 'makkah':  return adhan.CalculationMethod.UmmAlQura();
+    case 'karachi': return adhan.CalculationMethod.Karachi();
+    case 'tehran':  return adhan.CalculationMethod.Tehran();
+    case 'muhammadiyah': {
+      const p = adhan.CalculationMethod.Other();
+      p.fajrAngle = 18; p.ishaAngle = 18;
+      return p;
+    }
+    case 'kemenag': {
+      const p = adhan.CalculationMethod.Other();
+      p.fajrAngle = 20; p.ishaAngle = 18;
+      return p;
+    }
+  }
 }
+
+function ishaSub(p) {
+  if (p.ishaInterval > 0) return `${p.ishaInterval} min after Maghrib`;
+  return `Isha angle ${p.ishaAngle}°`;
+}
+function maghribSub(p) {
+  if (p.maghribAngle) return `${p.maghribAngle}° below horizon (Jafari)`;
+  return 'Sunset';
+}
+
+const PRAYER_ROWS = [
+  { key: 'fajr',    pkey: adhan.Prayer.Fajr,    glyph: 'ف', name: 'Fajr',    sub: p => `Fajr angle ${p.fajrAngle}°` },
+  { key: 'sunrise', pkey: adhan.Prayer.Sunrise, glyph: '☀', name: 'Sunrise', sub: () => 'Tulu\' al-Shams' },
+  { key: 'dhuhr',   pkey: adhan.Prayer.Dhuhr,   glyph: 'ظ', name: 'Dhuhr',   sub: () => 'Solar noon' },
+  { key: 'asr',     pkey: adhan.Prayer.Asr,     glyph: 'ع', name: 'Asr',     sub: () => 'Standard (Shafi\'i)' },
+  { key: 'maghrib', pkey: adhan.Prayer.Maghrib, glyph: 'م', name: 'Maghrib', sub: maghribSub },
+  { key: 'isha',    pkey: adhan.Prayer.Isha,    glyph: 'ع', name: 'Isha',    sub: ishaSub },
+];
+
+function fmtTime(d, tz) {
+  return new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit', minute: '2-digit', timeZone: tz, hourCycle: 'h23'
+  }).format(d);
+}
+function fmtDate(d, tz) {
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric', timeZone: tz
+  }).format(d);
+}
+
+// Build a Date whose browser-local Y/M/D matches today's calendar day in the target tz.
+// Adhan-JS reads date.getFullYear/Month/Date as browser-local values for the calculation day.
+function todayInTz(tz) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(new Date());
+  const y = +parts.find(p => p.type === 'year').value;
+  const m = +parts.find(p => p.type === 'month').value - 1;
+  const d = +parts.find(p => p.type === 'day').value;
+  return new Date(y, m, d, 12, 0, 0);
+}
+
+function renderPrayer(presetKey) {
+  const preset = PRESETS[presetKey];
+  const params = paramsFor(presetKey);
+  params.madhab = adhan.Madhab.Shafi;
+
+  const coords = new adhan.Coordinates(preset.loc.coords[0], preset.loc.coords[1]);
+  const date = todayInTz(preset.loc.tz);
+  const times = new adhan.PrayerTimes(coords, date, params);
+  const nextPrayer = times.nextPrayer(new Date());
+
+  document.getElementById('presetLabel').textContent = preset.label;
+  const locEl = document.getElementById('presetLoc');
+  if (locEl) locEl.innerHTML = `📍 ${preset.loc.city} · ${preset.note}`;
+
+  const dateEl = document.getElementById('prayerDate');
+  if (dateEl) dateEl.textContent = fmtDate(new Date(), preset.loc.tz);
+
+  document.getElementById('prayerRows').innerHTML = PRAYER_ROWS.map(row => {
+    const t = times[row.key];
+    const isNext = row.pkey === nextPrayer;
+    return `
+      <div class="prayer-row ${isNext ? 'next' : ''}">
+        <span class="glyph">${row.glyph}</span>
+        <div class="name">${row.name}<small>${row.sub(params)}</small></div>
+        <span class="time">${fmtTime(t, preset.loc.tz)}</span>
+        <span class="bell">${isNext ? '🔔' : '○'}</span>
+      </div>
+    `;
+  }).join('');
+}
+
 document.querySelectorAll('.preset-switch button').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.preset-switch button').forEach(b => b.classList.remove('active'));
