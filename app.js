@@ -136,21 +136,45 @@ const prayerData = {
       { name: 'Fajr', glyph: 'ف', time: '04:21', sub: 'Fajr angle 18°' },
       { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
       { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
-      { name: 'Asr', glyph: 'ع', time: '16:22', sub: 'Hanafi calculation' },
+      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
       { name: 'Maghrib', glyph: 'م', time: '18:23', sub: 'Sunset', next: true },
       { name: 'Isha', glyph: 'ع', time: '19:55', sub: 'Isha angle 18°' },
     ]
   },
+  tehran: {
+    label: 'Tehran · Institute of Geophysics',
+    loc: '📍 Iran (Jafari) · Fajr 17.7° / Isha 14° / Maghrib 4.5° below horizon',
+    times: [
+      { name: 'Fajr', glyph: 'ف', time: '04:23', sub: 'Fajr angle 17.7°' },
+      { name: 'Sunrise', glyph: '☀', time: '05:38', sub: 'Tulu\' al-Shams' },
+      { name: 'Dhuhr', glyph: 'ظ', time: '12:08', sub: 'Solar noon' },
+      { name: 'Asr', glyph: 'ع', time: '15:34', sub: 'Standard (Shafi\'i)' },
+      { name: 'Maghrib', glyph: 'م', time: '18:41', sub: '4.5° below horizon (Jafari)', next: true },
+      { name: 'Isha', glyph: 'ع', time: '19:23', sub: 'Isha angle 14°' },
+    ]
+  },
   muhammadiyah: {
     label: 'Muhammadiyah · Munas Tarjih ke-31',
-    loc: '📍 Indonesia · Fajr 20° / Isha 18°',
+    loc: '📍 Indonesia · Fajr 18° / Isha 18° (2021 decree)',
     times: [
-      { name: 'Fajr', glyph: 'ف', time: '04:13', sub: 'Fajr angle 20°' },
+      { name: 'Fajr', glyph: 'ف', time: '04:22', sub: 'Fajr angle 18°' },
       { name: 'Sunrise', glyph: '☀', time: '05:34', sub: 'Tulu\' al-Shams' },
-      { name: 'Dhuhr', glyph: 'ظ', time: '11:42', sub: 'Zenith + buffer' },
+      { name: 'Dhuhr', glyph: 'ظ', time: '11:42', sub: 'Solar noon' },
       { name: 'Asr', glyph: 'ع', time: '15:04', sub: 'Standard (Shafi\'i)' },
       { name: 'Maghrib', glyph: 'م', time: '17:51', sub: 'Sunset', next: true },
-      { name: 'Isha', glyph: 'ع', time: '19:02', sub: 'Isha angle 18°' },
+      { name: 'Isha', glyph: 'ع', time: '19:06', sub: 'Isha angle 18°' },
+    ]
+  },
+  kemenag: {
+    label: 'Kemenag · Ministry of Religious Affairs',
+    loc: '📍 Indonesia · Fajr 20° / Isha 18° · ~8 min earlier Subuh than Muhammadiyah',
+    times: [
+      { name: 'Fajr', glyph: 'ف', time: '04:14', sub: 'Fajr angle 20°' },
+      { name: 'Sunrise', glyph: '☀', time: '05:34', sub: 'Tulu\' al-Shams' },
+      { name: 'Dhuhr', glyph: 'ظ', time: '11:42', sub: 'Solar noon' },
+      { name: 'Asr', glyph: 'ع', time: '15:04', sub: 'Standard (Shafi\'i)' },
+      { name: 'Maghrib', glyph: 'م', time: '17:51', sub: 'Sunset', next: true },
+      { name: 'Isha', glyph: 'ع', time: '19:06', sub: 'Isha angle 18°' },
     ]
   }
 };
