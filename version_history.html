@@ -48,8 +48,8 @@
     <h1>Version history</h1>
     <p class="lede">A focused product, shipped in small, deliberate updates. Every change we've made, in order — with category tags so you can see what evolved.</p>
     <div class="page-meta">
-      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.1 · May 24, 2026</span>
-      <span class="page-meta-pill">📦 7 releases since launch</span>
+      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.2 · June 1, 2026</span>
+      <span class="page-meta-pill">📦 8 releases since launch</span>
       <span class="page-meta-pill">⚡ Frequent updates</span>
     </div>
   </div>
@@ -71,13 +71,42 @@
 
     <div class="timeline" id="timeline">
 
-      <div class="timeline-item latest" data-tags="prayer privacy ui platform">
+      <div class="timeline-item latest" data-tags="prayer ui platform privacy fix">
         <div class="timeline-card">
           <div class="tl-head">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-              <span class="tl-vnum">v1.6.1</span>
+              <span class="tl-vnum">v1.6.2</span>
               <span class="tl-latest">Latest</span>
             </div>
+            <span class="tl-date">June 1, 2026</span>
+          </div>
+          <h3>Liquid Glass UI, Jumu'ah surfacing, onboarding priming</h3>
+          <p class="summary">A refinement release: iOS 26's Liquid Glass material adopted across primary surfaces, Friday Jumu'ah framing for male users, an onboarding step that primes prayer reminders right after sign-in, and a broader minimum-iOS bump so more devices are welcome.</p>
+          <div class="tl-tags">
+            <span class="tl-tag prayer">Prayer</span>
+            <span class="tl-tag ui">UI &amp; UX</span>
+            <span class="tl-tag platform">Platform</span>
+            <span class="tl-tag privacy">Privacy</span>
+            <span class="tl-tag fix">Fix</span>
+          </div>
+          <ul>
+            <li><strong>iOS 26 Liquid Glass.</strong> Primary surfaces, Phase 2 surfaces, and all CTA buttons now adopt iOS 26's Liquid Glass material — with a graceful fallback for older releases.</li>
+            <li><strong>Wider device support.</strong> Minimum iOS bumped down from 18.6 to 17.0, so users on older iPhones can run Lightio again.</li>
+            <li><strong>Onboarding prayer priming.</strong> After sign-in, a new onboarding step explains and requests iOS notification permission. Enabling here sets Prayer Reminders consent in one step.</li>
+            <li><strong>Friday Jumu'ah for male users.</strong> Friday Dhuhr is surfaced as Jumu'ah (Salat Jumat / Solat Jumaat / …) in notifications when your profile gender is male — never imposed on users who didn't share their gender, and falls back to Dhuhr otherwise.</li>
+            <li><strong>3-day schedule cap.</strong> Notifications are scheduled only 3 days ahead instead of 7, so you don't get stale times if you travel across time zones.</li>
+            <li><strong>Auto-refresh on location update.</strong> Prayer settings refresh themselves the moment your location updates — no manual reload.</li>
+            <li><strong>Fresher hadith reflections.</strong> A small on-device tracker remembers recently-shown hadith identifiers per prayer slot, so notifications rotate through fresh content instead of repeating. The tracker stays local — only IDs, no personal data.</li>
+            <li><strong>Smarter weather search.</strong> If the weather-enriched hadith search returns nothing, the app now falls back to a baseline keyword instead of showing an empty result.</li>
+            <li><strong>Notification &amp; location fixes.</strong> No more authorization request at launch; foreground prayer notifications now surface in the system list. Concurrent location requests are coalesced onto a single task.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-tags="prayer privacy ui platform">
+        <div class="timeline-card">
+          <div class="tl-head">
+            <span class="tl-vnum">v1.6.1</span>
             <span class="tl-date">May 24, 2026</span>
           </div>
           <h3>Sun &amp; weather come to Prayer Reminders</h3>
