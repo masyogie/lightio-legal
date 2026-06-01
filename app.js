@@ -251,7 +251,7 @@ const faqs = [
   },
   {
     q: 'What devices does Lightio support?',
-    a: 'iPhone running iOS 18.6 or later. The on-device ML model uses Core ML and the Apple Neural Engine, which is available on most modern iPhones.'
+    a: 'iPhone running iOS 17.0 or later. The on-device ML model uses Core ML and the Apple Neural Engine, which is available on most modern iPhones.'
   },
   {
     q: 'Can I delete all my data?',
