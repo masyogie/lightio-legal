@@ -759,16 +759,26 @@ section.tight { padding: 56px 0; }
   align-items: center;
 }
 .team-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: var(--r-lg);
   background: repeating-linear-gradient(45deg, #E8E8EE, #E8E8EE 8px, #DCDCE4 8px, #DCDCE4 16px);
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
 }
-.team-photo::after {
+.team-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+.team-photo:empty::after {
   content: 'team photo';
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
