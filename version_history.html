@@ -48,8 +48,8 @@
     <h1>Version history</h1>
     <p class="lede">A focused product, shipped in small, deliberate updates. Every change we've made, in order — with category tags so you can see what evolved.</p>
     <div class="page-meta">
-      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.2 · June 1, 2026</span>
-      <span class="page-meta-pill">📦 8 releases since launch</span>
+      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.3 · June 5, 2026</span>
+      <span class="page-meta-pill">📦 9 releases since launch</span>
       <span class="page-meta-pill">⚡ Frequent updates</span>
     </div>
   </div>
@@ -71,13 +71,36 @@
 
     <div class="timeline" id="timeline">
 
-      <div class="timeline-item latest" data-tags="prayer ui platform privacy fix">
+      <div class="timeline-item latest" data-tags="privacy fix">
         <div class="timeline-card">
           <div class="tl-head">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-              <span class="tl-vnum">v1.6.2</span>
+              <span class="tl-vnum">v1.6.3</span>
               <span class="tl-latest">Latest</span>
             </div>
+            <span class="tl-date">June 5, 2026</span>
+          </div>
+          <h3>Tighter consent controls &amp; sign-out cleanup</h3>
+          <p class="summary">A privacy-hardening release. Account-bound features now stay behind sign-in, withdrawing consent or signing out reliably clears the data it covered, and cloud sync merges instead of overwrites.</p>
+          <div class="tl-tags">
+            <span class="tl-tag privacy">Privacy</span>
+            <span class="tl-tag fix">Fix</span>
+          </div>
+          <ul>
+            <li><strong>Auth-gated account features.</strong> Cloud Sync and Data Personalization toggles now require sign-in to enable — they write data keyed to your account, so they stay disabled until you're signed in.</li>
+            <li><strong>Cleaner Recommended preset.</strong> Cloud Storage is no longer pre-checked in the onboarding "Recommended" consent preset — cloud is now always an explicit, deliberate opt-in.</li>
+            <li><strong>Search without analytics.</strong> Core Hadith search no longer requires Analytics consent. You can keep analytics off and still search freely.</li>
+            <li><strong>Sign-out clears account data.</strong> Signing out now clears account-bound consents and removes your saved prayer location from memory and profile.</li>
+            <li><strong>Withdrawing consent clears its data.</strong> Turning off Prayer Reminders clears the saved location, with a clear in-app hint so there are no surprises.</li>
+            <li><strong>Cloud sync merges, never overwrites.</strong> History and favorites now sync by union — local and cloud items are combined instead of one replacing the other.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-tags="prayer ui platform privacy fix">
+        <div class="timeline-card">
+          <div class="tl-head">
+            <span class="tl-vnum">v1.6.2</span>
             <span class="tl-date">June 1, 2026</span>
           </div>
           <h3>Liquid Glass UI, Jumu'ah surfacing, onboarding priming</h3>
