@@ -15,7 +15,7 @@
 <!-- Top announcement -->
 <div class="top-banner">
   <span class="pill">New</span>
-  <span>Version 1.6.3 — Tighter consent controls: account features stay behind sign-in, with full sign-out cleanup.</span>
+  <span>Version 1.6.4 — Pick your Hadith translation language directly in Settings, plus clearer privacy.</span>
   <a href="#whats-new">See what's new →</a>
 </div>
 
@@ -197,7 +197,7 @@
       <div class="step-card">
         <div class="step-num">03 · DISCOVER</div>
         <h3>Read, save, reflect</h3>
-        <p>Receive an authentic Hadith with the Arabic original, an AI translation (English by default, switching to your country's primary language once you verify your phone number), and the narrator's chain. Save favorites, share with friends, revisit history.</p>
+        <p>Receive an authentic Hadith with the Arabic original, an AI translation (English by default, or the language you pick in Settings), and the narrator's chain. Save favorites, share with friends, revisit history.</p>
         <div class="step-illus">
           <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="1.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
         </div>
@@ -484,7 +484,7 @@
         <span class="badge">Encrypted</span>
         <div class="label">HADITH SEARCH</div>
         <h3>OpenAI backend</h3>
-        <p>Only the detected object label leaves your device. Summaries are returned in English by default; once you verify your phone number, Lightio infers your country from the dialing code and routes summaries in that country's primary language. The Arabic source is always preserved.</p>
+        <p>Only the detected object label leaves your device. Summaries are returned in English by default; signed-in users can pick a preferred translation language in Settings, applied to every summary. The Arabic source is always preserved.</p>
       </div>
     </div>
   </div>
@@ -499,6 +499,22 @@
       <p>A focused product, shipped in small, deliberate updates.</p>
     </div>
     <div class="changelog">
+      <div class="version-card">
+        <div class="vmeta">
+          <span class="vnum">v1.6.4</span>
+          <span class="vdate">June 13, 2026</span>
+        </div>
+        <h3>Explicit language picker &amp; simpler account</h3>
+        <p>Translation language is now a clear in-app picker instead of being inferred from a verified phone number — the phone verification flow is gone, and privacy disclosures are tightened to match.</p>
+        <ul>
+          <li>New Settings → Hadith Language picker (signed-in users)</li>
+          <li>Phone verification removed — phone is now optional contact only</li>
+          <li>Clearer email, gender &amp; birth-date (age-bucket) handling</li>
+          <li>Only gender, age bucket &amp; language sent to OpenAI when personalized</li>
+          <li>"Saved" confirmation toasts on profile &amp; prayer-location updates</li>
+          <li>Sign-out cleanup bounded by timeout; history retention on foreground</li>
+        </ul>
+      </div>
       <div class="version-card">
         <div class="vmeta">
           <span class="vnum">v1.6.3</span>

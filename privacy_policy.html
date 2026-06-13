@@ -52,7 +52,7 @@
     <h1>Privacy Policy</h1>
     <p class="lede">How Lightio handles your data — clearly, fairly, and on your terms. We default to the minimum and ask before doing anything more.</p>
     <div class="page-meta">
-      <span class="page-meta-pill"><span class="dot"></span> Last updated · June 1, 2026</span>
+      <span class="page-meta-pill"><span class="dot"></span> Last updated · June 13, 2026</span>
       <span class="page-meta-pill">⏱ 6 min read</span>
       <span class="page-meta-pill">🌍 Applies globally</span>
       <span class="page-meta-pill">🇪🇺 GDPR compliant</span>
@@ -117,11 +117,15 @@
         </tr>
         <tr>
           <td class="col-name">Data Personalization <div class="req-tag opt">Opt-in</div></td>
-          <td>Profile data you voluntarily provide (gender, date of birth, email, phone) plus interaction patterns. Requires UI Personalization to be active.</td>
+          <td>Gender and birth date you voluntarily provide, used to tailor Hadith relevance. Your birth date is converted to an age-group bucket (your exact date is never used for ranking), and a minimum age of 13 is enforced. Requires UI Personalization to be active. A phone number is optional contact info only — never required, never verified, never used for SMS or marketing.</td>
+        </tr>
+        <tr>
+          <td class="col-name">Preferred Language <div class="req-tag opt">Opt-in</div></td>
+          <td>The Hadith translation language you pick in Settings (signed-in users only). English is the default — no language data leaves your device until you make a selection. Stored in your Firebase Firestore profile and also applied to prayer-reminder notification text.</td>
         </tr>
         <tr>
           <td class="col-name">Cloud Storage <div class="req-tag opt">Opt-in</div></td>
-          <td>Securely backed-up history and favorites for cross-device sync. Images themselves are never part of cloud backup.</td>
+          <td>Securely backed-up history and favorites for cross-device sync via Firebase Firestore. Images themselves are never part of cloud backup.</td>
         </tr>
         <tr>
           <td class="col-name">Prayer &amp; Location <div class="req-tag opt">Opt-in</div></td>
@@ -141,7 +145,7 @@
     <p>If you opt into Analytics, we analyze usage patterns to find bugs, identify popular features, and prioritize work. All anonymous.</p>
 
     <h3>Tailor your experience</h3>
-    <p>UI Personalization remembers your theme and layout preferences. Data Personalization uses your profile and interactions to suggest more relevant Hadiths.</p>
+    <p>UI Personalization remembers your theme and layout preferences. Data Personalization uses your gender and age-group bucket to suggest more relevant Hadiths. Your Preferred Language, if set, is applied to AI summaries and prayer-reminder notifications.</p>
 
     <h3>Enable cross-device features</h3>
     <p>Cloud Storage securely syncs your history and favorites between your iPhones and iPads. Prayer Reminders use your location to calculate accurate times locally.</p>
@@ -149,13 +153,13 @@
     <h2 id="third-party">Third-party services</h2>
     <p>Lightio integrates with a small, intentional set of third-party services. Every one is named here:</p>
     <ul>
-      <li><strong>OpenAI</strong> — Hadith search and AI-generated summaries. Only the object label is sent; never your image.</li>
+      <li><strong>OpenAI</strong> — Hadith search and AI-generated summaries. We send detected object text labels and, only when Data Personalization is on, your gender, age-group bucket (never your exact birth date), and preferred language so results can be ranked. Never your image, email, phone, or history.</li>
       <li><strong>Apple (Sign in with Apple, APNS, Core ML, MapKit)</strong> — authentication, push notifications, on-device ML, and location services.</li>
       <li><strong>Apple WeatherKit</strong> — used for two purposes inside Prayer Reminders: (1) sunrise, solar noon, and sunset times shown beneath Today's Schedule, and (2) current weather conditions to enrich hadith reflection search at prayer-time notifications (e.g. surfacing rain-related hadiths when it's raining). Both use the latitude and longitude already stored in your prayer profile — no additional personal data is sent. Legal attribution and data sources are linked in-app beneath the Sun Today section.</li>
-      <li><strong>Firebase Authentication &amp; Phone Auth</strong> — optional sign-in and phone verification.</li>
+      <li><strong>Firebase Authentication</strong> — accounts and sign-in via email/password and Sign in with Apple. Passwords are handled entirely by Firebase. No phone sign-in or SMS verification.</li>
+      <li><strong>Firebase Firestore</strong> — cloud database storing your profile (gender, birth date, email, optional phone, preferred language, prayer location) and, with Cloud Storage consent, your synced history &amp; favorites. Images are never stored — only text data.</li>
       <li><strong>Firebase Cloud Messaging</strong> — server-side delivery of push notifications you've opted into.</li>
-      <li><strong>Firebase Crashlytics</strong> — anonymized crash reports (only with Analytics consent). Declared in our App Privacy manifest.</li>
-      <li><strong>iCloud (via CloudKit)</strong> — Cloud Storage backup of favorites &amp; history.</li>
+      <li><strong>Firebase Crashlytics</strong> — anonymized crash reports (stack trace, device model, OS version) plus your Firebase user ID for correlation when signed in. No detection history, favorites, profile fields, or message content is collected.</li>
     </ul>
     <p>We do not use advertising SDKs, third-party analytics trackers, social media pixels, or marketing automation tools.</p>
 
@@ -234,7 +238,7 @@
       </li>
       <li>
         <span class="where">Cloud backup</span>
-        <span class="desc">If consented, retained in iCloud until you disable Cloud Storage for that data type.</span>
+        <span class="desc">If consented, retained in Firebase Firestore until you disable Cloud Storage for that data type.</span>
       </li>
       <li>
         <span class="where">Analytics</span>

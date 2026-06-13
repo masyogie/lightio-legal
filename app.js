@@ -30,7 +30,7 @@ const featureCats = {
   discover: [
     { icon: '👁️', title: 'Visual Hadith Discovery', desc: 'Point your camera at everyday objects and instantly find related Hadiths via on-device object detection.' },
     { icon: '🔍', title: 'AI-Powered Search', desc: 'Our intelligent system sifts through authentic Hadith collections to bring you the most relevant results.' },
-    { icon: '🌐', title: 'Multilingual Summaries', desc: 'AI summaries default to English. Verify your phone number and Lightio detects your country from it — switching summaries to that country\'s primary language.' },
+    { icon: '🌐', title: 'Multilingual Summaries', desc: 'AI summaries default to English. Signed-in users pick a preferred translation language in Settings — applied to every summary and prayer-reminder notification.' },
     { icon: '📜', title: 'Full Narrator Chain', desc: 'Every Hadith includes the original Arabic, English narrator information, and source collection.' },
   ],
   personalize: [
