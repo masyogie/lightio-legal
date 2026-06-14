@@ -47,7 +47,7 @@ const featureCats = {
     { icon: '🌤️', title: 'Sun & Weather Insights', desc: 'Sunrise, solar noon, and sunset appear beneath Today\'s Schedule, and notifications enrich hadith reflections with current weather — powered by Apple WeatherKit.' },
   ],
   privacy: [
-    { icon: '🔒', title: 'On-Device Processing', desc: 'Images you capture never leave your iPhone. Only the resulting object label is sent for Hadith lookup.' },
+    { icon: '🔒', title: 'On-Device Processing', desc: 'Images you capture never leave your iPhone. Only the resulting object or scene label is sent for Hadith lookup.' },
     { icon: '⚖️', title: 'Granular Consent', desc: 'Five independent toggles let you opt into analytics, personalization, cloud sync, and prayer reminders.' },
     { icon: '📤', title: 'Data Export & Deletion', desc: 'Export everything, or delete it all — directly from the in-app Data Dashboard. Your GDPR rights, one tap away.' },
     { icon: '🍎', title: 'Sign in with Apple', desc: 'Quick, private, and secure sign-in using your Apple ID. No extra password to remember.' },
@@ -239,7 +239,7 @@ const faqs = [
   },
   {
     q: 'Does Lightio send my photos anywhere?',
-    a: 'No. Image processing happens entirely on your iPhone using the Apple Neural Engine. Only the resulting object label (like "date" or "cup") is sent to our Hadith search backend — never the image itself.'
+    a: 'No. Image processing happens entirely on your iPhone using the Apple Neural Engine. Only the resulting object or scene label (like "date", "cup", or "garden") is sent to our Hadith search backend — never the image itself.'
   },
   {
     q: 'How accurate are the Hadiths?',
@@ -258,8 +258,8 @@ const faqs = [
     a: 'Absolutely. The in-app Data Dashboard lets you export everything as a file, or permanently delete your history, favorites, profile, and cloud backup — exercising your full GDPR rights without contacting support.'
   },
   {
-    q: 'Why only 80 objects?',
-    a: 'Lightio uses the COCO object vocabulary — 80 categories that cover most common everyday objects. We deliberately chose breadth over depth in this version so detection is fast, accurate, and works without a server.'
+    q: 'How many things can Lightio recognize?',
+    a: 'Lightio detects 80 everyday objects from the COCO vocabulary (YOLOX-M), and since v1.7 also classifies scenes and places via Apple Vision — gardens, mountains, bodies of water, and more. Both run on-device in a single pass, so you get a relevant Hadith even when there isn\'t one clear object to frame.'
   },
   {
     q: 'Will Lightio come to Android?',

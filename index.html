@@ -15,7 +15,7 @@
 <!-- Top announcement -->
 <div class="top-banner">
   <span class="pill">New</span>
-  <span>Version 1.6.4 — Pick your Hadith translation language directly in Settings, plus clearer privacy.</span>
+  <span>Version 1.7 — Now recognizes scenes and places too, not just objects — powered by Apple Vision.</span>
   <a href="#whats-new">See what's new →</a>
 </div>
 
@@ -88,12 +88,7 @@
               <h3>Point &amp; capture</h3>
               <div class="viewfinder">
                 <span class="viewfinder-glyph">🌴</span>
-                <div class="bbox bbox-1">
-                  <div class="bbox-label">date · 94%</div>
-                </div>
-                <div class="bbox bbox-2">
-                  <div class="bbox-label">bowl · 71%</div>
-                </div>
+                <div class="scan-frame"></div>
               </div>
               <div class="shutter"></div>
             </div>
@@ -101,12 +96,12 @@
             <div class="phone-step" data-step="1">
               <h4>Step 02</h4>
               <h3>AI detection</h3>
-              <p style="font-size:12px;color:var(--text-3);margin-top:-6px">YOLOX-M, fully on-device.</p>
+              <p style="font-size:12px;color:var(--text-3);margin-top:-6px">Objects &amp; scenes, fully on-device.</p>
               <div class="det-list">
                 <div class="det-row">
                   <div class="swatch" style="background:#FFE9C7">🌴</div>
                   <div style="flex:1">
-                    <div class="lbl">Date (Kurma)</div>
+                    <div class="lbl">Date (Kurma) <span class="src-tag obj">object</span></div>
                     <div class="bar"><i style="width:94%"></i></div>
                   </div>
                   <div class="pct">94%</div>
@@ -114,18 +109,18 @@
                 <div class="det-row">
                   <div class="swatch" style="background:#E8F1FF">🥣</div>
                   <div style="flex:1">
-                    <div class="lbl">Bowl</div>
+                    <div class="lbl">Bowl <span class="src-tag obj">object</span></div>
                     <div class="bar"><i style="width:71%"></i></div>
                   </div>
                   <div class="pct">71%</div>
                 </div>
                 <div class="det-row">
-                  <div class="swatch" style="background:#F0EAFE">🍽️</div>
+                  <div class="swatch" style="background:#E8F6EC">🌿</div>
                   <div style="flex:1">
-                    <div class="lbl">Dining table</div>
-                    <div class="bar"><i style="width:58%"></i></div>
+                    <div class="lbl">Garden <span class="src-tag scene">scene</span></div>
+                    <div class="bar"><i style="width:82%"></i></div>
                   </div>
-                  <div class="pct">58%</div>
+                  <div class="pct">82%</div>
                 </div>
               </div>
             </div>
@@ -211,8 +206,8 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Detection coverage</span>
-      <h2>80 everyday objects from the COCO vocabulary.</h2>
-      <p>Lightio's detection model recognizes a curated subset of objects that frequently appear in the Hadith corpus — from food and animals to household items.</p>
+      <h2>80 everyday objects — plus scenes and places.</h2>
+      <p>Lightio detects a curated set of 80 everyday objects from the COCO vocabulary that frequently appear in the Hadith corpus. Since v1.7, on-device Apple Vision scene classification adds places and landscapes — a garden, a mountain, a body of water — so a meaningful Hadith surfaces even when there's no single object to frame.</p>
     </div>
     <div class="chip-cloud">
       <span class="chip highlight">Date</span>
@@ -375,7 +370,7 @@
       <ul class="privacy-bullets">
         <li>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Images processed locally — only object labels leave the device
+          Images processed locally — only object &amp; scene labels leave the device
         </li>
         <li>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -484,7 +479,7 @@
         <span class="badge">Encrypted</span>
         <div class="label">HADITH SEARCH</div>
         <h3>OpenAI backend</h3>
-        <p>Only the detected object label leaves your device. Summaries are returned in English by default; signed-in users can pick a preferred translation language in Settings, applied to every summary. The Arabic source is always preserved.</p>
+        <p>Only the detected object or scene label leaves your device. Summaries are returned in English by default; signed-in users can pick a preferred translation language in Settings, applied to every summary. The Arabic source is always preserved.</p>
       </div>
     </div>
   </div>
@@ -499,6 +494,21 @@
       <p>A focused product, shipped in small, deliberate updates.</p>
     </div>
     <div class="changelog">
+      <div class="version-card">
+        <div class="vmeta">
+          <span class="vnum">v1.7</span>
+          <span class="vdate">June 14, 2026</span>
+        </div>
+        <h3>Scene recognition — beyond objects</h3>
+        <p>Detection now runs object recognition and scene classification together in a single on-device pass, so Lightio finds a Hadith even when there's no single object to frame.</p>
+        <ul>
+          <li>Apple Vision scene classification added alongside YOLOX-M</li>
+          <li>Recognizes places &amp; landscapes — gardens, mountains, water</li>
+          <li>"No results" is now far rarer — both sources must come up empty</li>
+          <li>Bounding-box overlay removed — cleaner captures, tappable chips</li>
+          <li>Object &amp; scene results clearly separated, never interleaved</li>
+        </ul>
+      </div>
       <div class="version-card">
         <div class="vmeta">
           <span class="vnum">v1.6.4</span>

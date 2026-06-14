@@ -48,8 +48,8 @@
     <h1>Version history</h1>
     <p class="lede">A focused product, shipped in small, deliberate updates. Every change we've made, in order — with category tags so you can see what evolved.</p>
     <div class="page-meta">
-      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.6.4 · June 13, 2026</span>
-      <span class="page-meta-pill">📦 10 releases since launch</span>
+      <span class="page-meta-pill"><span class="dot"></span> Latest · v1.7 · June 14, 2026</span>
+      <span class="page-meta-pill">📦 11 releases since launch</span>
       <span class="page-meta-pill">⚡ Frequent updates</span>
     </div>
   </div>
@@ -71,13 +71,35 @@
 
     <div class="timeline" id="timeline">
 
-      <div class="timeline-item latest" data-tags="privacy ui fix">
+      <div class="timeline-item latest" data-tags="detection ui">
         <div class="timeline-card">
           <div class="tl-head">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-              <span class="tl-vnum">v1.6.4</span>
+              <span class="tl-vnum">v1.7</span>
               <span class="tl-latest">Latest</span>
             </div>
+            <span class="tl-date">June 14, 2026</span>
+          </div>
+          <h3>Scene recognition — detection beyond objects</h3>
+          <p class="summary">Lightio's biggest detection upgrade since the YOLOX-M switch. Every capture now runs object detection and Apple Vision scene classification together, so you get a relevant Hadith even when there's no single object to frame.</p>
+          <div class="tl-tags">
+            <span class="tl-tag detection">Detection</span>
+            <span class="tl-tag ui">UI &amp; UX</span>
+          </div>
+          <ul>
+            <li><strong>Scene &amp; place classification.</strong> Apple Vision (<code>VNClassifyImageRequest</code>) now runs alongside YOLOX-M in a single on-device pass — recognizing gardens, mountains, bodies of water, and other scenes beyond the 80 COCO objects.</li>
+            <li><strong>Smart filtering.</strong> Vision emits hundreds of candidates per image; a precision gate, confidence floor, normalization, de-duplication against object labels, and a cap of five keep only the meaningful scene labels.</li>
+            <li><strong>Clear separation.</strong> Object results (YOLOX, up to ten) and scene results sit on separate confidence scales and are never interleaved — objects first, then scenes.</li>
+            <li><strong>"No results" is now rare.</strong> The empty state appears only when both the object and scene passes come up empty.</li>
+            <li><strong>Cleaner captures.</strong> The on-image bounding-box overlay is gone — results are tappable chips beneath a clean framed image.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-tags="privacy ui fix">
+        <div class="timeline-card">
+          <div class="tl-head">
+            <span class="tl-vnum">v1.6.4</span>
             <span class="tl-date">June 13, 2026</span>
           </div>
           <h3>Explicit language picker, simpler account &amp; privacy</h3>

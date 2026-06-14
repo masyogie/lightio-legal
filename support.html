@@ -101,13 +101,13 @@
           </div>
           <div>
             <h4>Detection isn't working</h4>
-            <p class="q">"The camera opens but no objects are detected."</p>
+            <p class="q">"The camera opens but nothing is detected."</p>
           </div>
         </div>
         <ol class="steps">
           <li>Make sure Lightio has camera permission in iOS Settings → Privacy &amp; Security → Camera.</li>
-          <li>Ensure the object is well-lit and centered in the frame.</li>
-          <li>Try a different angle — bounding boxes work best on objects shown side-on.</li>
+          <li>Ensure the subject is well-lit and centered in the frame.</li>
+          <li>No single object? Lightio also recognizes scenes and places (a garden, a mountain) — try framing the wider surroundings.</li>
           <li>Check Settings → Detection Threshold and lower it if confidence is too high.</li>
           <li>Force-quit and reopen the app to reset the ML pipeline.</li>
         </ol>
@@ -349,7 +349,7 @@ const faqs = [
   },
   {
     q: 'Does Lightio send my photos anywhere?',
-    a: 'No. Image processing happens entirely on your iPhone using the Apple Neural Engine. Only the resulting object label (like "date" or "cup") is sent to our Hadith search backend — never the image itself.'
+    a: 'No. Image processing happens entirely on your iPhone using the Apple Neural Engine. Only the resulting object or scene label (like "date", "cup", or "garden") is sent to our Hadith search backend — never the image itself.'
   },
   {
     q: 'How accurate are the Hadiths?',
@@ -364,8 +364,8 @@ const faqs = [
     a: 'iPhone running iOS 17.0 or later. The on-device ML model uses Core ML and the Apple Neural Engine, which is available on most modern iPhones.'
   },
   {
-    q: 'Why only 80 objects?',
-    a: 'Lightio uses the COCO object vocabulary — 80 categories that cover most common everyday objects. We deliberately chose breadth over depth so detection is fast, accurate, and works without a server. Expanding vocabulary is on our roadmap.'
+    q: 'How many things can Lightio recognize?',
+    a: 'Lightio detects 80 everyday objects from the COCO vocabulary (YOLOX-M), and since v1.7 also classifies scenes and places via Apple Vision — gardens, mountains, bodies of water, and more. Both run on-device in a single pass. Expanding the object vocabulary further is on our roadmap.'
   },
   {
     q: 'Can I use Lightio offline?',
