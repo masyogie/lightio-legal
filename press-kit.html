@@ -142,12 +142,14 @@
     display: flex;
     flex-direction: column;
   }
-  .screenshot-slot image-slot {
+  .screenshot-slot img {
     flex: 1;
+    min-height: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 18px;
     background: #fff;
-    border: 1px dashed var(--border-strong);
     display: block;
   }
   .screenshot-slot .caption {
@@ -373,22 +375,22 @@
   <!-- Screenshots (image slots) -->
   <section class="pk-section">
     <h2>Screenshots</h2>
-    <p class="lead">Drag and drop your own App Store screenshots here. They persist locally so you can preview a finished press kit before sharing. (As the site owner, you'd replace these with real exported images.)</p>
+    <p class="lead">Real in-app screenshots from the latest release — free to use in articles, reviews, and roundups covering Lightio.</p>
     <div class="screenshots-grid">
       <div class="screenshot-slot">
-        <image-slot id="ss-1" shape="rounded" radius="18" placeholder="Hero — camera view"></image-slot>
+        <img src="assets/images/screenshot-01-camera.jpg" alt="Lightio camera view — point at an everyday object to begin" width="750" height="1626" loading="lazy">
         <div class="caption">01 · CAMERA</div>
       </div>
       <div class="screenshot-slot">
-        <image-slot id="ss-2" shape="rounded" radius="18" placeholder="Detection results"></image-slot>
+        <img src="assets/images/screenshot-02-detect.jpg" alt="Lightio detection results — objects and scenes recognized on-device" width="750" height="1622" loading="lazy">
         <div class="caption">02 · DETECT</div>
       </div>
       <div class="screenshot-slot">
-        <image-slot id="ss-3" shape="rounded" radius="18" placeholder="Hadith card view"></image-slot>
+        <img src="assets/images/screenshot-03-hadith.jpg" alt="Lightio Hadith card — authentic Hadith with Arabic, translation, and narrator chain" width="750" height="1622" loading="lazy">
         <div class="caption">03 · HADITH</div>
       </div>
       <div class="screenshot-slot">
-        <image-slot id="ss-4" shape="rounded" radius="18" placeholder="Prayer reminders"></image-slot>
+        <img src="assets/images/screenshot-04-prayer.jpg" alt="Lightio prayer reminders — accurate prayer times with sun and weather" width="750" height="1622" loading="lazy">
         <div class="caption">04 · PRAYER</div>
       </div>
     </div>
@@ -469,7 +471,6 @@
   </div>
 </footer>
 
-<script src="image-slot.js"></script>
 <script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('primary-nav');
