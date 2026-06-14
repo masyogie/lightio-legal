@@ -198,9 +198,9 @@
         <p>Result rendered &amp; saved</p>
       </div>
     </div>
-    <p>The image itself never leaves your device. Only the resulting object label — a short string like <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"date"</code> or <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"sheep"</code> — is sent to our search backend.</p>
+    <p>The image itself never leaves your device. Only the resulting label — a short string like <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"date"</code>, <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"sheep"</code>, or a scene like <code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">"garden"</code> — is sent to our search backend.</p>
 
-    <h2 id="detection">Object detection</h2>
+    <h2 id="detection">Object &amp; scene detection</h2>
     <p>Lightio uses <strong>YOLOX-M</strong>, an Apache 2.0-licensed object detector compiled to Core ML for Apple's Neural Engine. It recognizes the 80 categories in the COCO vocabulary — a carefully chosen subset that covers most everyday objects relevant to Hadith literature.</p>
     <p>We chose YOLOX-M over alternatives for three reasons:</p>
     <ul>
@@ -208,7 +208,8 @@
       <li><strong>Size.</strong> ~31% smaller than the previous YOLOv7 model we used, with comparable accuracy.</li>
       <li><strong>Speed.</strong> Real-time inference on iPhone — no waiting after capture.</li>
     </ul>
-    <p>The model returns bounding boxes with confidence scores. We display all detections above the user-configurable confidence threshold (default 50%).</p>
+    <p>Since <strong>v1.7</strong>, every capture also runs <strong>Apple Vision scene classification</strong> (<code style="background:var(--bg-tint);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px">VNClassifyImageRequest</code>) in the same on-device pass. Vision emits hundreds of candidate scene labels per image, so we filter hard: a precision gate, a confidence floor, normalization, de-duplication against the object labels, and a cap of five. Object results (YOLOX, up to ten) and scene results are kept on separate confidence scales and never interleaved — objects are listed first, then scenes.</p>
+    <p>Results are presented as tappable chips beneath a clean, framed capture. We removed the on-image bounding-box overlay in v1.7 — it added visual clutter once multiple objects and scenes could be detected at once. "No results" now appears only when both the object and scene passes come up empty, which is rare.</p>
 
     <h2 id="sources">Hadith sources</h2>
     <p>Lightio's Hadith corpus is built exclusively from <strong>Kutub al-Sittah</strong> (the Six Canonical Collections) plus two well-regarded supplementary works. Every Hadith you see includes its source collection, narrator chain (<em>isnad</em>), and authenticity grading.</p>
@@ -311,7 +312,7 @@
       <div class="ico">!</div>
       <div>
         <h4>The 80-object ceiling</h4>
-        <p>Lightio can only detect objects in the COCO vocabulary. That means specialized religious items (prayer beads, kufi, qur'an stand) and cultural objects aren't detected. Expanding vocabulary is on our roadmap.</p>
+        <p>Object detection is limited to the 80 COCO categories, so specialized religious items (prayer beads, kufi, qur'an stand) still aren't recognized as objects. Since v1.7, Apple Vision scene classification widens coverage to places and landscapes, but it doesn't add these specific items either. Expanding the object vocabulary remains on our roadmap.</p>
       </div>
     </div>
 
